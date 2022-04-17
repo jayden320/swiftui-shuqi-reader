@@ -21,6 +21,8 @@ struct TabPage: View {
             NavigationView { BookshelfPage() }.tabItem { createTabItem(tabItemInfos[0]) }.tag(0)
             NavigationView { BookstorePage() }.tabItem { createTabItem(tabItemInfos[1]) }.tag(1)
             NavigationView { MePage() }.tabItem { createTabItem(tabItemInfos[2]) }.tag(2)
+        }.onChange(of: tabBarIndex) { newValue in
+            print("On tap tab bar item \(newValue)")
         }
     }
     

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct BookshelfPage: View {
     var body: some View {
-        Text("BookshelfPage").navigationTitle("Bookshelf")
+        LazyVStack {
+            Text("BookshelfPage").navigationTitle("Bookshelf")
+        }
     }
 }
 

@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct BookstorePage: View {
-    @State var pageIndex = 1
+    @State var pageIndex = 0
     
     let tabs: [BookstoreListType] = [.excellent, .female, .male, .cartoon]
     
     var body: some View {
         VStack {
             TopBarView(titles: tabs.map { $0.title() }, selection: $pageIndex)
-            BookstoreListView(viewModel: BookstoreViewModel(type: tabs[pageIndex]))
+            TabView(selection: $pageIndex) {
+                ForEach(0..<4) { idx in
+                    BookstoreListView(viewModel: BookstoreViewModel(type: tabs[idx])).tag(idx)
+                }
+            }.tabViewStyle(PageTabViewStyle())
         }.navigationBarHidden(true)
     }
 }

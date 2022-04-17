@@ -9,17 +9,27 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct BookstoreListView: View {
-    var viewModel: BookstoreViewModel
+    @ObservedObject var viewModel: BookstoreViewModel
     
     var body: some View {
-        if let model = viewModel.model {
+        if viewModel.fetchStatus == .fetching {
+            ProgressView()
+        } else {
             ScrollView {
                 LazyVStack(alignment: .leading) {
-                    WebImage(url: URL(string: "http://img-tailor.11222.cn/pm/book/operate/2019010321241999.jpg")).resizable().scaledToFit()
-                    BookstoreMenuView(menus: model.menus)
+                    if let carousels = viewModel.carousels {
+                        TabView {
+                            ForEach(carousels, id: \.imageUrl) { carousel in
+                                WebImage(url: URL(string: carousel.imageUrl)).resizable().scaledToFill()
+                            }
+                        }.tabViewStyle(PageTabViewStyle()).aspectRatio(5/3, contentMode: .fill)
+                    }
+                    if let menus = viewModel.menus {
+                        BookstoreMenuView(menus: menus)
+                    }
                     Spacer(minLength: 20)
                     
-                    ForEach(model.cards, id: \.title) { card in
+                    ForEach(viewModel.cards, id: \.title) { card in
                         SectionHeader(title: card.title)
                         switch card.style {
                         case .grid:
@@ -28,13 +38,13 @@ struct BookstoreListView: View {
                             BookHybirdView(books: card.books)
                         case .cell:
                             BookHorizontalView(books: card.books)
+                        case .unknow:
+                            BookGridView(books: card.books)
                         }
                         Spacer(minLength: 20)
-                    }
+                    }.foregroundColor(ThemeColor.darkGray)
                 }
             }
-        } else {
-            ProgressView()
         }
     }
 }

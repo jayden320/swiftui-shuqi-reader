@@ -5,7 +5,7 @@
     "module": [
       {
         "id": "3426",
-        "m_s_name": "顶部banner",
+        "m_s_name": "top_banner",
         "content": [
           {
             "link_text": "曾国藩传",
@@ -53,14 +53,14 @@
       },
       {
         "id": "3429",
-        "m_s_name": "顶部导航",
+        "m_s_name": "menu",
         "content": [
           {
             "title": "分类",
             "url": "app:openAppBookClassPage",
             "sex": "0",
             "toTitle": "分类",
-            "icon": "img/menu_category.png",
+            "icon": "menu_category",
             "icon_style": "0",
             "endtime": "",
             "starttime": "",
@@ -71,7 +71,7 @@
             "url": "https:\/\/owl.shuqiread.com\/?sq_pg_param=owlri",
             "sex": "0",
             "toTitle": "榜单",
-            "icon": "img/menu_rank.png",
+            "icon": "menu_rank",
             "icon_style": "1",
             "endtime": "",
             "starttime": "",
@@ -82,7 +82,7 @@
             "url": "http:\/\/iosbookstore.shuqiread.com\/route.php?sq_pg_param=bsvh#!\/page_id\/26\/",
             "sex": "0",
             "toTitle": "会员",
-            "icon": "img/menu_vip.png",
+            "icon": "menu_vip",
             "icon_style": "0",
             "endtime": "",
             "starttime": "",
@@ -93,7 +93,7 @@
             "url": "http:\/\/iosbookstore.shuqiread.com\/route.php?sq_pg_param=bslb#!\/page_id\/29\/",
             "sex": "0",
             "toTitle": "完结",
-            "icon": "img/menu_complete.png",
+            "icon": "menu_complete",
             "icon_style": "6",
             "endtime": "",
             "starttime": "",
@@ -104,7 +104,7 @@
             "url": "http:\/\/iosbookstore.shuqiread.com\/route.php?sq_pg_param=bslb#!\/page_id\/31\/",
             "sex": "0",
             "toTitle": "出版",
-            "icon": "img/menu_publish.png",
+            "icon": "menu_publish",
             "icon_style": "2",
             "endtime": "",
             "starttime": "",

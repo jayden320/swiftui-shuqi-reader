@@ -9,11 +9,11 @@ import SwiftUI
 
 struct TopBarView: View {
     let titles: [String]
-    var selection: Binding<Int>
+    @Binding var selection: Int
     
     @ViewBuilder
     func itemView(title: String, index: Int) -> some View {
-        let isSelected = (index == selection.wrappedValue)
+        let isSelected = (index == selection)
         VStack(spacing: 5.0) {
             Text(title).font(.title3).foregroundColor(isSelected ? ThemeColor.darkGray : ThemeColor.gray)
             RoundedRectangle(cornerRadius: 2)
@@ -21,7 +21,7 @@ struct TopBarView: View {
                 .foregroundColor(ThemeColor.secondary)
                 .opacity(isSelected ? 1 : 0)
         }.frame(maxWidth:.infinity).onTapGesture {
-            
+            selection = index
         }
     }
     
