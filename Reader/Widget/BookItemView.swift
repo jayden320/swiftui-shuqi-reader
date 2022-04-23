@@ -15,7 +15,7 @@ struct BookVItemView: View {
         NavigationLink(destination: BookDetailPage()) {
             VStack(alignment: .leading) {
                 WebImage(url: URL(string: book.imgUrl)).resizable().aspectRatio(3/4, contentMode: .fill)
-                Text(book.name).font(.bold(.body)()).lineLimit(1)
+                Text(book.name).font(.bold(.body)()).lineLimit(1).foregroundColor(ThemeColor.darkGray)
                 Spacer(minLength: 5)
                 Text(book.author).font(.caption).foregroundColor(ThemeColor.gray)
             }
@@ -75,7 +75,7 @@ struct BookCell: View {
 
 struct BookCell_Previews: PreviewProvider {
     static var previews: some View {
-        BookCell(book: Book.mock())
+        BookCell(book: Book.mock(id: "0"))
             .previewLayout(.fixed(width: 375, height: 100))
 //        BookstorePage().preferredColorScheme(.dark)
     }
