@@ -16,6 +16,5 @@ struct BlurView: UIViewRepresentable {
         return blurView;
     }
     
-    func updateUIView(_ nsView: UIVisualEffectView, context: Context) {
-    }
+    func updateUIView(_ nsView: UIVisualEffectView, context: Context) {}
 };

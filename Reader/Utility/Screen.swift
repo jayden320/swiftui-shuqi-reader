@@ -13,6 +13,10 @@ class Screen {
         UIApplication.shared.windows.first?.safeAreaInsets ?? UIEdgeInsets.zero
     }
     
+    static var navigationBarHeight: CGFloat {
+        49.0 + safeAreaInsets.top
+    }
+    
     static var tabbarHeight: CGFloat {
         50.0 + safeAreaInsets.bottom
     }

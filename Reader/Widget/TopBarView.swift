@@ -14,24 +14,29 @@ struct TopBarView: View {
     @ViewBuilder
     func itemView(title: String, index: Int) -> some View {
         let isSelected = (index == selection)
-        VStack(spacing: 5.0) {
-            Text(title).font(.title3).foregroundColor(isSelected ? ThemeColor.darkGray : ThemeColor.gray)
-            RoundedRectangle(cornerRadius: 2)
-                .frame(width: 20, height: 4)
-                .foregroundColor(ThemeColor.secondary)
-                .opacity(isSelected ? 1 : 0)
-        }.frame(maxWidth:.infinity).onTapGesture {
+        Button {
             selection = index
+        } label: {
+            VStack(spacing: 5.0) {
+                Text(title).font(.title3).foregroundColor(isSelected ? ThemeColor.darkGray : ThemeColor.gray)
+                RoundedRectangle(cornerRadius: 2)
+                    .frame(width: 20, height: 4)
+                    .foregroundColor(ThemeColor.secondary)
+                    .opacity(isSelected ? 1 : 0)
+            }.frame(maxWidth:.infinity)
         }
     }
     
     var body: some View {
-        HStack {
-            Spacer().frame(maxWidth:.infinity)
-            ForEach(0..<titles.count, id: \.self) { idx in
-                itemView(title: titles[idx], index: idx)
-            }
-            Spacer().frame(maxWidth:.infinity)
+        ZStack(alignment: .bottom) {
+            BlurView(blurEffect: UIBlurEffect(style: .extraLight)).frame(height: Screen.navigationBarHeight)
+            HStack {
+                Spacer().frame(maxWidth:.infinity)
+                ForEach(0..<titles.count, id: \.self) { idx in
+                    itemView(title: titles[idx], index: idx)
+                }
+                Spacer().frame(maxWidth:.infinity)
+            }.padding(.bottom, 5)
         }
     }
 }

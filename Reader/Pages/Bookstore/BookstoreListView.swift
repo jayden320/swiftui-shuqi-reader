@@ -42,7 +42,7 @@ struct BookstoreListView: View {
                     }
                     Spacer(minLength: 20)
                 }.foregroundColor(ThemeColor.darkGray)
-            }.padding(.bottom, Screen.tabbarHeight)
+            }.padding(EdgeInsets(top: Screen.safeAreaInsets.top, leading: 0, bottom: Screen.tabbarHeight, trailing: 0))
         }.ignoresSafeArea()
     }
     
