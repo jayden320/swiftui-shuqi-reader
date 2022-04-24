@@ -17,12 +17,14 @@ struct TabPage: View {
     ]
     
     var body: some View {
-        TabView(selection: $tabBarIndex) {
-            NavigationView { BookshelfPage(viewModel: BookshelfViewModel()) }.tabItem { createTabItem(tabItemInfos[0]) }.tag(0)
-            NavigationView { BookstorePage() }.tabItem { createTabItem(tabItemInfos[1]) }.tag(1)
-            NavigationView { MePage() }.tabItem { createTabItem(tabItemInfos[2]) }.tag(2)
-        }.onChange(of: tabBarIndex) { newValue in
-            print("On tap tab bar item \(newValue)")
+        NavigationView {
+            TabView(selection: $tabBarIndex) {
+                BookshelfPage(viewModel: BookshelfViewModel()).tabItem { createTabItem(tabItemInfos[0]) }.tag(0)
+                BookstorePage().tabItem { createTabItem(tabItemInfos[1]) }.tag(1)
+                MePage().tabItem { createTabItem(tabItemInfos[2]) }.tag(2)
+            }.onChange(of: tabBarIndex) { newValue in
+                print("On tap tab bar item \(newValue)")
+            }
         }
     }
     

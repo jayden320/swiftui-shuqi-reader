@@ -13,7 +13,7 @@ struct BookHybirdView: View {
     var body: some View {
         LazyVStack {
             LazyVGrid(columns: [GridItem(),GridItem(),GridItem(),GridItem()], spacing: 15) {
-                ForEach(0..<4,id: \.self) { idx in
+                ForEach(0..<4, id: \.self) { idx in
                     BookVItemView(book: books[idx])
                 }
             }

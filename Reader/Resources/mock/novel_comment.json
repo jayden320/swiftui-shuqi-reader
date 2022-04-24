@@ -15,7 +15,7 @@
 		"vTime": 1546752139
 	},
 	"data": [{
-		"mid": "a46b796c3b4911e8abbc6c92bf28e005",
+		"id": "a46b796c3b4911e8abbc6c92bf28e005",
 		"textType": "0",
 		"isJing": 1,
 		"isTop": 1,
@@ -37,7 +37,7 @@
 		"existShenReply": 1,
 		"replyInfo": {
 			"repliedNickName": "大爷",
-			"mid": "746be2b047ce11e8abc06c92bf28e013",
+			"id": "746be2b047ce11e8abc06c92bf28e013",
 			"text": "确实是换了作者的",
 			"type": "2",
 			"nickName": "书友953662548",
@@ -48,7 +48,7 @@
 		"auditStatus": 0,
 		"btype": "1"
 	}, {
-		"mid": "39029be2851911e789c16c92bf28e013",
+		"id": "39029be2851911e789c16c92bf28e013",
 		"textType": "0",
 		"isJing": 1,
 		"isTop": 1,
@@ -70,7 +70,7 @@
 		"existShenReply": 0,
 		"replyInfo": {
 			"repliedNickName": "三年后",
-			"mid": "5a97c5e6854311e789c16c92bf28e013",
+			"id": "5a97c5e6854311e789c16c92bf28e013",
 			"text": "一定，无论何时都不会恶意灌水，不求快，力求好",
 			"type": "1",
 			"nickName": "月亮不发光",
@@ -81,7 +81,7 @@
 		"auditStatus": 0,
 		"btype": "1"
 	}, {
-		"mid": "b25e6f785edd11e789c16c92bf28e013",
+		"id": "b25e6f785edd11e789c16c92bf28e013",
 		"textType": "0",
 		"isJing": 1,
 		"isTop": 0,
@@ -103,7 +103,7 @@
 		"existShenReply": 0,
 		"replyInfo": {
 			"repliedNickName": "书友 871256594",
-			"mid": "a6430f9eefa811e7abc06c92bf28e013",
+			"id": "a6430f9eefa811e7abc06c92bf28e013",
 			"text": "是啊！你不服？",
 			"type": "1",
 			"nickName": "月亮不发光",

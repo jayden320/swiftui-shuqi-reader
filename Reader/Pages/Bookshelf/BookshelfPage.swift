@@ -38,7 +38,7 @@ struct BookshelfPage: View {
     var firstBook: some View {
         if let book = viewModel.books.first {
             HStack {
-                WebImage(url: URL(string: book.imgUrl)).resizable().aspectRatio(3/4, contentMode: .fit).frame(width: 120)
+                BookCover(url: book.imgUrl, width: 120)
                 VStack(alignment: .leading, spacing: 30) {
                     Text(book.name).foregroundColor(Color.white).font(.title)
                     HStack {

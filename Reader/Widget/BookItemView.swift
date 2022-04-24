@@ -12,9 +12,9 @@ struct BookVItemView: View {
     let book: Book
     
     var body: some View {
-        NavigationLink(destination: BookDetailPage()) {
-            VStack(alignment: .leading) {
-                WebImage(url: URL(string: book.imgUrl)).resizable().aspectRatio(3/4, contentMode: .fill)
+        NavigationLink(destination: DeferView { BookDetailPage(id: book.id) }) {
+            VStack(alignment: .leading) { 
+                BookCover(url: book.imgUrl)
                 Text(book.name).font(.bold(.body)()).lineLimit(1).foregroundColor(ThemeColor.darkGray)
                 Spacer(minLength: 5)
                 Text(book.author).font(.caption).foregroundColor(ThemeColor.gray)
@@ -27,9 +27,9 @@ struct BookHItemView: View {
     let book: Book
     
     var body: some View {
-        NavigationLink(destination: BookDetailPage()) {
+        NavigationLink(destination: DeferView { BookDetailPage(id: book.id) }) {
             HStack {
-                WebImage(url: URL(string: book.imgUrl)).resizable().aspectRatio(3/4, contentMode: .fill).frame(width: 60)
+                BookCover(url: book.imgUrl, width: 60)
                 VStack(alignment: .leading) {
                     Text(book.name).font(.bold(.body)()).lineLimit(2).multilineTextAlignment(.leading)
                     Spacer(minLength: 5)
@@ -45,9 +45,9 @@ struct BookCell: View {
     let book: Book
     
     var body: some View {
-        NavigationLink(destination: BookDetailPage()) {
+        NavigationLink(destination: DeferView { BookDetailPage(id: book.id) }) {
             HStack() {
-                WebImage(url: URL(string: book.imgUrl)).resizable().aspectRatio(3/4, contentMode: .fill).frame(width: 70).clipped()
+                BookCover(url: book.imgUrl, width: 70)
                 VStack(alignment: .leading) {
                     Text(book.name).font(.bold(.body)()).lineLimit(2)
                     Spacer(minLength: 3)
@@ -56,8 +56,12 @@ struct BookCell: View {
                     HStack {
                         Text(book.author).font(.caption).foregroundColor(ThemeColor.gray)
                         Spacer()
-                        buildTag(title: book.status, color: book.status == "连载" ? ThemeColor.blue : ThemeColor.primary)
-                        buildTag(title: book.type, color: ThemeColor.gray)
+                        if let status = book.status {
+                            buildTag(title: status, color: book.status == "连载" ? ThemeColor.blue : ThemeColor.primary)
+                        }
+                        if let type = book.type {
+                            buildTag(title: type, color: ThemeColor.gray)
+                        }
                     }
                 }
                 Spacer()

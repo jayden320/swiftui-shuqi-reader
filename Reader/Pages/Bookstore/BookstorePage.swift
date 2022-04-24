@@ -19,7 +19,7 @@ struct BookstorePage: View {
                 ForEach(0..<4) { idx in
                     BookstoreListView(viewModel: BookstoreViewModel(type: tabs[idx])).tag(idx)
                 }
-            }.tabViewStyle(PageTabViewStyle())
+            }.tabViewStyle(.page(indexDisplayMode: .never))
         }.navigationBarHidden(true)
     }
 }
