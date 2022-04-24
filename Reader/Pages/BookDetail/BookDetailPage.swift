@@ -112,8 +112,17 @@ struct BookDetailPage: View {
                     Button {} label: {
                         Text("加书架").frame(maxWidth: .infinity)
                     }
-                    Button {} label: {
-                        Text("开始阅读").frame(maxWidth: .infinity,maxHeight: 40).foregroundColor(ThemeColor.white).background(ThemeColor.primary).cornerRadius(5)
+                    Button {
+                        let alert = UIAlertController(title: "友情提示", message: "点击了按钮", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "取消", style: .default, handler: { action in
+                            print("取消")
+                        }))
+                        alert.addAction(UIAlertAction(title: "确定", style: .default, handler: { action in
+                            print("确定")
+                        }))
+                        alert.show()
+                    } label: {
+                        Text("开始阅读").frame(maxWidth: .infinity,maxHeight: 40).foregroundColor(ThemeColor.card).background(ThemeColor.primary).cornerRadius(5)
                     }
                     Button {} label: {
                         Text("下载").frame(maxWidth: .infinity)

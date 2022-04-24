@@ -88,6 +88,7 @@ struct BookDetail: Identifiable, Codable {
         case wordCount = "wordCount"
         case tags = "tag"
         case commentCountWrapper = "comment_count"
+        case chapterCountWrapper = "chapterNum"
     }
     
     var statusColor: Color {

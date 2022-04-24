@@ -13,7 +13,6 @@ struct ThemeColor {
     static var secondary = Color("secondary")
     static var red = Color("red")
     static var orange = Color("orange")
-    static var white = Color("white")
     static var card = Color("card")
     static var paper = Color("paper")
     static var lightGray = Color("lightGray")
