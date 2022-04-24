@@ -29,9 +29,11 @@ struct BookDetailPage: View {
                     Text(introduction).font(.subheadline).lineLimit(isSummaryUnfold ? nil : 3).padding(.horizontal)
                     Spacer()
                 }.padding(.vertical, 13)
-                Image(isSummaryUnfold ? "detail_up": "detail_down").padding()
+                Image( "detail_up").rotationEffect(Angle(degrees: isSummaryUnfold ? 0 : 180)).padding()
             }.onTapGesture {
-                isSummaryUnfold = !isSummaryUnfold
+                withAnimation {
+                    isSummaryUnfold = !isSummaryUnfold
+                }
             }
         }
     }
