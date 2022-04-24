@@ -6,18 +6,20 @@
 [![GitHub stars](https://img.shields.io/github/stars/huanxsd/swiftui-shuqi-reader?logo=github&style=flat-square)](https://github.com/huanxsd/swiftui-shuqi-reader/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/huanxsd/swiftui-shuqi-reader?logo=github&style=flat-square)](https://github.com/huanxsd/swiftui-shuqi-reader/network)
 
-Language: English | [中文](README-ZH.md)
+Language: [English](README.md) | 中文
 
-## Features ✨
+## 功能 ✨
 
-Reimplemented part of the functionality of this project using swiftUI: [flutter_shuqi](https://github.com/huanxsd/flutter_shuqi)
-- Bookstore page
-- Bookshelf page
-- Profile page
-- Book detail page
-- Dark / Light mode support
+使用swiftUI重新实现了这个项目的部分功能: [flutter_shuqi](https://github.com/huanxsd/flutter_shuqi)
+- 书城页
+- 书架页
+- 我的页
+- 书籍详情页
+- 支持日间/夜间模式
 
-## Screenshots 📸
+我试着让这个Demo的结构尽量接近实际项目，同时使用比较简单方式去实现功能。这样可以让刚接触SwiftUI的人更够容易理解代码。
+
+## 截图 📸
 
 | ![1](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_1.png)   | ![2](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_2.png)   |
 |----------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|
@@ -25,7 +27,7 @@ Reimplemented part of the functionality of this project using swiftUI: [flutter_
 | ![5](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_1.png)   | ![6](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_2.png)   |
 | ![7](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_3.png)   | ![8](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_4.png)   |
 
-## Setup 🍭
+## 运行 🍭
 
 ```
 $ git clone https://github.com/huanxsd/swiftui-shuqi-reader.git
