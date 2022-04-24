@@ -42,7 +42,7 @@ struct BookDetailPage: View {
         HStack {
             Image("detail_latest")
             Text("最新")
-            Text(book.lastChapter.title).foregroundColor(ThemeColor.gray)
+            Text(book.lastChapter.title).foregroundColor(ThemeColor.dimGray)
             Spacer()
             Text(book.status).foregroundColor(book.statusColor)
             Image("arrow_right")
@@ -53,7 +53,7 @@ struct BookDetailPage: View {
         HStack {
             Image("detail_chapter")
             Text("目录")
-            Text("共\(book.chapterCountCount)章").foregroundColor(ThemeColor.gray)
+            Text("共\(book.chapterCountCount)章").foregroundColor(ThemeColor.dimGray)
             Spacer()
             Image("arrow_right")
         }.font(.subheadline).padding(Drawing.cellPadding)
@@ -83,7 +83,7 @@ struct BookDetailPage: View {
                 CommentCell(comment: comment)
             }
             Divider()
-            Text("查看全部评论（\(book.commentCount)条）").foregroundColor(ThemeColor.gray).font(.subheadline).padding(Drawing.cellPadding).frame( maxWidth: .infinity, alignment: .center)
+            Text("查看全部评论（\(book.commentCount)条）").foregroundColor(ThemeColor.dimGray).font(.subheadline).padding(Drawing.cellPadding).frame( maxWidth: .infinity, alignment: .center)
             Rectangle().foregroundColor(ThemeColor.paper)
         }
     }
@@ -109,21 +109,21 @@ struct BookDetailPage: View {
             VStack(spacing: 0) {
                 Divider()
                 HStack(alignment: .center) {
-                    Button {} label: {
-                        Text("加书架").frame(maxWidth: .infinity)
-                    }
                     Button {
-                        let alert = UIAlertController(title: "友情提示", message: "点击了按钮", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "取消", style: .default, handler: { _ in
-                            print("取消")
-                        }))
+                        let alert = UIAlertController(title: "友情提示", message: "已成功添加到书架", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "确定", style: .default, handler: { _ in
                             print("确定")
                         }))
                         alert.show()
                     } label: {
+                        Text("加书架").frame(maxWidth: .infinity)
+                    }
+                    NavigationLink {
+                        ReaderPage(vm: ReaderViewModel(bookId: book.id))
+                    } label: {
                         Text("开始阅读").frame(maxWidth: .infinity,maxHeight: 40).foregroundColor(ThemeColor.card).background(ThemeColor.primary).cornerRadius(5)
                     }
+
                     Button {} label: {
                         Text("下载").frame(maxWidth: .infinity)
                     }

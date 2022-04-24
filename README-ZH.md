@@ -15,17 +15,18 @@ Language: [English](README.md) | 中文
 - 书架页
 - 我的页
 - 书籍详情页
+- 阅读页
 - 支持日间/夜间模式
 
 我试着让这个Demo的结构尽量接近实际项目，同时使用比较简单方式去实现功能。这样可以让刚接触SwiftUI的人更够容易理解代码。
 
 ## 截图 📸
 
-| ![1](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_1.png)   | ![2](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_2.png)   |
-|----------------------------------------------------------|----------------------------------------------------------|
-| ![3](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_3.png)   | ![4](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_4.png)   |
-| ![5](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_1.png)   | ![6](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_2.png)   |
-| ![7](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_3.png)   | ![8](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_4.png)   |
+| ![1](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_1.png)   | ![2](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_2.png)   | ![3](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_3.png)   |
+|----------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|
+| ![4](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_4.png)   | ![5](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_5.png)   | ![6](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_6.png)   |
+| ![7](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_1.png)   | ![8](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_2.png)   | ![9](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_3.png)   |
+| ![10](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_4.png)   | ![11](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_5.png)   | ![12](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_6.png)   |
 
 ## 运行 🍭
 

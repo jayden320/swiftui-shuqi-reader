@@ -115,9 +115,9 @@ extension BookDetail {
         let url = Bundle.main.url(forResource: "novel_detail", withExtension: "json")!
         let response = try! Data(contentsOf: url)
         let json = try! JSONSerialization.jsonObject(with: response, options: []) as? [String: Any]
-        let data = json!["data"] as! [String: Any]
-        let bookData = try! JSONSerialization.data(withJSONObject: data, options: [])
-        let book = try! JSONDecoder().decode(BookDetail.self, from: bookData)
+        let dataMap = json!["data"] as! [String: Any]
+        let data = try! JSONSerialization.data(withJSONObject: dataMap, options: [])
+        let book = try! JSONDecoder().decode(BookDetail.self, from: data)
         return book
     }
 }
