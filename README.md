@@ -20,7 +20,7 @@ Reimplemented part of the functionality of this project using swiftUI: [flutter_
 ## Screenshots 📸
 
 | ![1](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_1.png)   | ![2](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_2.png)   |
-|----------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|
+|----------------------------------------------------------|----------------------------------------------------------|
 | ![3](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_3.png)   | ![4](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_4.png)   |
 | ![5](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_1.png)   | ![6](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_2.png)   |
 | ![7](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_3.png)   | ![8](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_4.png)   |
