@@ -103,7 +103,7 @@ struct BookDetailPage: View {
     
     var toolBar: some View {
         ZStack(alignment: .top) {
-            BlurView(blurEffect: UIBlurEffect(style: .extraLight)).frame(height: 50 + Screen.safeAreaInsets.bottom)
+            BlurView(blurEffect: UIBlurEffect(style: .systemThinMaterial)).frame(height: 50 + Screen.safeAreaInsets.bottom)
             VStack(spacing: 0) {
                 Divider()
                 HStack(alignment: .center) {
@@ -111,7 +111,7 @@ struct BookDetailPage: View {
                         Text("加书架").frame(maxWidth: .infinity)
                     }
                     Button {} label: {
-                        Text("开始阅读").frame(maxWidth: .infinity,maxHeight: 40).foregroundColor(Color.white).background(ThemeColor.primary).cornerRadius(5)
+                        Text("开始阅读").frame(maxWidth: .infinity,maxHeight: 40).foregroundColor(ThemeColor.white).background(ThemeColor.primary).cornerRadius(5)
                     }
                     Button {} label: {
                         Text("下载").frame(maxWidth: .infinity)
@@ -141,10 +141,10 @@ struct BookDetailPage: View {
                 }.padding(.bottom, Screen.safeAreaInsets.bottom + Drawing.toolBarHeight)
             }
             toolBar
-        }.ignoresSafeArea().navigationBarBackButtonHidden(true).navigationBarItems(leading: Button(action: {
+        }.background(ThemeColor.card).ignoresSafeArea().navigationBarBackButtonHidden(true).navigationBarItems(leading: Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
-            Image("pub_back_gray")
+            Image("pub_back_gray").renderingMode(.template).foregroundColor(ThemeColor.darkGray)
         })).navigationBarTitleDisplayMode(.inline).navigationTitle(vm.book?.name ?? "")
     }
     
@@ -181,6 +181,6 @@ struct BookDetailPage: View {
 
 struct BookDetailPage_Previews: PreviewProvider {
     static var previews: some View {
-        BookDetailPage(id: "1")
+        BookDetailPage(id: "1").preferredColorScheme(.dark)
     }
 }

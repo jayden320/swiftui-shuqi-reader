@@ -87,7 +87,7 @@ struct BookstorePage: View {
 
 struct BookstorePage_Previews: PreviewProvider {
     static var previews: some View {
-        BookstorePage()
-//        BookstorePage().preferredColorScheme(.dark)
+//        BookstorePage()
+        BookstorePage().preferredColorScheme(.dark)
     }
 }

@@ -34,7 +34,11 @@ struct TabPage: View {
     @ViewBuilder
     func createTabItem(_ info: TabItemInfo) -> some View {
         let isSelected = tabItemInfos.firstIndex { $0 == info } == tabBarIndex
-        Image(isSelected ? info.selectedImageName : info.imageName)
+        if isSelected {
+            Image(info.selectedImageName)
+        } else {
+            Image(info.imageName).renderingMode(.template).foregroundColor(ThemeColor.gray)
+        }
         Text(info.title)
     }
 }

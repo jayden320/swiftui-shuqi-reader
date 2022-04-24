@@ -9,15 +9,18 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct BookshelfPage: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     @ObservedObject var viewModel: BookshelfViewModel
-//    @StateObject var viewModel: BookshelfViewModel = BookshelfViewModel()
     
     var header: some View {
         return ZStack(alignment: .topLeading) {
-            Group {
-                Image("bookshelf_bg").resizable()
-                Image("bookshelf_cloud_0").resizable()
-            }.scaledToFill().frame(height: 300, alignment: .bottom)
+            if colorScheme == .light {
+                Group {
+                   Image("bookshelf_bg").resizable()
+                   Image("bookshelf_cloud_0").resizable()
+                }.scaledToFill().frame(height: 300, alignment: .bottom)
+            }
             VStack {
                 HStack {
                     Spacer()
@@ -40,13 +43,13 @@ struct BookshelfPage: View {
             HStack {
                 BookCover(url: book.imgUrl, width: 120)
                 VStack(alignment: .leading, spacing: 30) {
-                    Text(book.name).foregroundColor(Color.white).font(.title)
+                    Text(book.name).font(.title)
                     HStack {
                         Text("读至0.2%")
                         Text("继续阅读")
                         Image("bookshelf_continue_read")
-                    }.foregroundColor(Color.white)
-                }
+                    }
+                }.foregroundColor(Color.white)
                 .padding(.leading, 10.0)
                 Spacer()
             }.padding(.leading)
@@ -74,7 +77,7 @@ struct BookshelfPage: View {
                 header
                 gridView
             }.padding(.bottom, Screen.tabbarHeight)
-        }.ignoresSafeArea()
+        }.background(ThemeColor.card).ignoresSafeArea()
     }
     
     var body: some View {
@@ -156,6 +159,6 @@ struct BookshelfPage: View {
 
 struct BookshelfPage_Previews: PreviewProvider {
     static var previews: some View {
-        BookshelfPage(viewModel: BookshelfViewModel.mock())
+        BookshelfPage(viewModel: BookshelfViewModel.mock()).preferredColorScheme(.dark)
     }
 }

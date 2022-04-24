@@ -29,7 +29,7 @@ struct TopBarView: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            BlurView(blurEffect: UIBlurEffect(style: .extraLight)).frame(height: Screen.navigationBarHeight)
+            BlurView(blurEffect: UIBlurEffect(style: .systemThinMaterial)).frame(height: Screen.navigationBarHeight)
             HStack {
                 Spacer().frame(maxWidth:.infinity)
                 ForEach(0..<titles.count, id: \.self) { idx in

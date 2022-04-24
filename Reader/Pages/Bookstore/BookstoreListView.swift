@@ -43,7 +43,7 @@ struct BookstoreListView: View {
                     Spacer(minLength: 20)
                 }.foregroundColor(ThemeColor.darkGray)
             }.padding(EdgeInsets(top: Screen.safeAreaInsets.top, leading: 0, bottom: Screen.tabbarHeight, trailing: 0))
-        }.ignoresSafeArea()
+        }.background(ThemeColor.card).ignoresSafeArea()
     }
     
     var body: some View {
