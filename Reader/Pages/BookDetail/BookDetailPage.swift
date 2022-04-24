@@ -114,10 +114,10 @@ struct BookDetailPage: View {
                     }
                     Button {
                         let alert = UIAlertController(title: "友情提示", message: "点击了按钮", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "取消", style: .default, handler: { action in
+                        alert.addAction(UIAlertAction(title: "取消", style: .default, handler: { _ in
                             print("取消")
                         }))
-                        alert.addAction(UIAlertAction(title: "确定", style: .default, handler: { action in
+                        alert.addAction(UIAlertAction(title: "确定", style: .default, handler: { _ in
                             print("确定")
                         }))
                         alert.show()

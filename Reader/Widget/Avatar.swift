@@ -10,7 +10,7 @@ import SDWebImageSwiftUI
 
 struct Avatar: View {
     let url: String
-    var size: CGFloat? = nil
+    var size: CGFloat?
     
     var body: some View {
         let content = WebImage(url: URL(string: url)).resizable().clipShape(Circle())

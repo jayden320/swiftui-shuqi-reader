@@ -59,7 +59,6 @@ class BookstoreViewModel: ObservableObject {
                     let card = try? JSONDecoder().decode(BookCard.self, from: data) {
                     cards.append(card)
                 }
-                break
             }
         }
         completion()

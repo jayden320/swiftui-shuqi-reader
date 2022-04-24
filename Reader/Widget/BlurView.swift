@@ -13,8 +13,8 @@ struct BlurView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> UIVisualEffectView {
         let blurView = UIVisualEffectView(effect: blurEffect)
-        return blurView;
+        return blurView
     }
     
     func updateUIView(_ nsView: UIVisualEffectView, context: Context) {}
-};
+}
