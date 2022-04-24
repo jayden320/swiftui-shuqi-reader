@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BookDetailPage: View {
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var vm: BookDetailViewModel
     
     @State var isSummaryUnfold: Bool = false
@@ -27,13 +28,11 @@ struct BookDetailPage: View {
                 HStack {
                     Text(introduction).font(.subheadline).lineLimit(isSummaryUnfold ? nil : 3).padding(.horizontal)
                     Spacer()
-                }
-                Button {
-                    isSummaryUnfold = !isSummaryUnfold
-                } label: {
-                    Image(isSummaryUnfold ? "detail_up": "detail_down")
-                }.padding()
-            }.padding(.vertical, 13)
+                }.padding(.vertical, 13)
+                Image(isSummaryUnfold ? "detail_up": "detail_down").padding()
+            }.onTapGesture {
+                isSummaryUnfold = !isSummaryUnfold
+            }
         }
     }
     
@@ -98,35 +97,32 @@ struct BookDetailPage: View {
                 ForEach(books) { book in
                     BookVItemView(book: book)
                 }
-            }.padding(EdgeInsets.init(top: 0, leading: 15, bottom: 0, trailing: 15))
+            }.padding(EdgeInsets.init(top: 0, leading: 15, bottom: 15, trailing: 15))
         }
     }
     
     var toolBar: some View {
         ZStack(alignment: .top) {
-            Rectangle().foregroundColor(ThemeColor.white).frame(height: 50+Screen.safeAreaInsets.bottom).shadow(color: ThemeColor.lightGray, radius: 5)
-            HStack(alignment: .center) {
-                Button {
-                    
-                } label: {
-                    Text("加书架").frame(maxWidth: .infinity)
-                }
-                Button {
-                    
-                } label: {
-                    Text("开始阅读").frame(maxWidth: .infinity,maxHeight: 40).foregroundColor(Color.white).background(ThemeColor.primary).cornerRadius(5)
-                }
-                Button {
-                    
-                } label: {
-                    Text("下载").frame(maxWidth: .infinity)
-                }
-            }.padding(.top, 5)
+            BlurView(blurEffect: UIBlurEffect(style: .extraLight)).frame(height: 50 + Screen.safeAreaInsets.bottom)
+            VStack(spacing: 0) {
+                Divider()
+                HStack(alignment: .center) {
+                    Button {} label: {
+                        Text("加书架").frame(maxWidth: .infinity)
+                    }
+                    Button {} label: {
+                        Text("开始阅读").frame(maxWidth: .infinity,maxHeight: 40).foregroundColor(Color.white).background(ThemeColor.primary).cornerRadius(5)
+                    }
+                    Button {} label: {
+                        Text("下载").frame(maxWidth: .infinity)
+                    }
+                }.padding(.top, 5)
+            }
         }
     }
     
     var content: some View {
-        VStack(spacing: 0) {
+        ZStack(alignment: .bottom) {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 0) {
                     Group {
@@ -142,10 +138,14 @@ struct BookDetailPage: View {
                     }
                     commentsView
                     recommentView
-                }
+                }.padding(.bottom, Screen.safeAreaInsets.bottom + Drawing.toolBarHeight)
             }
             toolBar
-        }.ignoresSafeArea().navigationBarHidden(true)
+        }.ignoresSafeArea().navigationBarBackButtonHidden(true).navigationBarItems(leading: Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }, label: {
+            Image("pub_back_gray")
+        })).navigationBarTitleDisplayMode(.inline).navigationTitle(vm.book?.name ?? "")
     }
     
     var body: some View {
@@ -160,10 +160,9 @@ struct BookDetailPage: View {
         static let cellPadding = EdgeInsets(top: 13, leading: 15, bottom: 13, trailing: 15)
         static let tagColors = [Color(hex: "F9A19F"), Color(hex: "59DDB9"), Color(hex: "7EB3E7")]
         static let cellDividerLeading = 20.0
+        static let toolBarHeight = 50.0
     }
 }
-
-
 
 
 

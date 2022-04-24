@@ -6,5 +6,6 @@ target 'Reader' do
   use_frameworks!
 
 pod 'SDWebImageSwiftUI'
+pod 'Introspect'
 
 end

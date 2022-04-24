@@ -13,7 +13,9 @@ struct BookCover: View {
     var width: Double?
     
     var body: some View {
-        let image = WebImage(url: URL(string: url)).resizable().aspectRatio(3/4, contentMode: .fit).clipped()
+        let image = WebImage(url: URL(string: url)).placeholder {
+            Rectangle().foregroundColor(ThemeColor.lightGray)
+        }.resizable().aspectRatio(3/4, contentMode: .fit).clipped()
         if let width = width {
             image.frame(width: width)
         } else {

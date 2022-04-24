@@ -17,7 +17,9 @@ struct BookstoreListView: View {
                 if let carousels = viewModel.carousels {
                     TabView {
                         ForEach(carousels, id: \.imageUrl) { carousel in
-                            WebImage(url: URL(string: carousel.imageUrl)).resizable().scaledToFill()
+                            WebImage(url: URL(string: carousel.imageUrl)).placeholder {
+                                Rectangle().foregroundColor(ThemeColor.lightGray)
+                            }.resizable()
                         }
                     }.tabViewStyle(PageTabViewStyle()).aspectRatio(5/3, contentMode: .fill)
                 }
@@ -40,8 +42,8 @@ struct BookstoreListView: View {
                     }
                     Spacer(minLength: 20)
                 }.foregroundColor(ThemeColor.darkGray)
-            }
-        }
+            }.padding(.bottom, Screen.tabbarHeight)
+        }.ignoresSafeArea()
     }
     
     var body: some View {

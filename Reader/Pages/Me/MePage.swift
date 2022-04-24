@@ -33,9 +33,7 @@ struct MePage: View {
                                                      
                 }
             }
-        }.navigationBarHidden(true)
-        
-
+        }.padding(EdgeInsets(top: Screen.safeAreaInsets.top, leading: 0, bottom: Screen.tabbarHeight, trailing: 0)).ignoresSafeArea()
     }
 }
 

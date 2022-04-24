@@ -1,4 +1,5 @@
 PODS:
+  - Introspect (0.1.4)
   - SDWebImage (5.12.4):
     - SDWebImage/Core (= 5.12.4)
   - SDWebImage/Core (5.12.4)
@@ -6,17 +7,20 @@ PODS:
     - SDWebImage (~> 5.10)
 
 DEPENDENCIES:
+  - Introspect
   - SDWebImageSwiftUI
 
 SPEC REPOS:
   trunk:
+    - Introspect
     - SDWebImage
     - SDWebImageSwiftUI
 
 SPEC CHECKSUMS:
+  Introspect: b62c4dd2063072327c21d618ef2bedc3c87bc366
   SDWebImage: 631cf572cc93dfdfe54162e556410a61f1141928
   SDWebImageSwiftUI: 8a3923c95108312b03a599ec1498754af55a6819
 
-PODFILE CHECKSUM: bd4826dd2e995f171139231f1b24fb4bec054db1
+PODFILE CHECKSUM: 44e37cc49652bc0da95ae29afc4e817cf71473e9
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3

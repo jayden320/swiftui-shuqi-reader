@@ -58,6 +58,7 @@
 		24DAEE5E28164D280040165A /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DAEE5D28164D280040165A /* BookDetailViewModel.swift */; };
 		24DAEE6228164D280040165A /* BookDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DAEE6128164D280040165A /* BookDetailHeader.swift */; };
 		24E3D45F27F35040003A2546 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E3D45E27F35040003A2546 /* Preview Assets.xcassets */; };
+		24ED40A728179DB400C2F95F /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ED40A628179DB400C2F95F /* BlurView.swift */; };
 		8B1FC71C22341B533345C97D /* Pods_Reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E5F307C10D33B5DC05771B /* Pods_Reader.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +116,7 @@
 		24DAEE6128164D280040165A /* BookDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailHeader.swift; sourceTree = "<group>"; };
 		24E3D45427F35040003A2546 /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E3D45E27F35040003A2546 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		24ED40A628179DB400C2F95F /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		70E5F307C10D33B5DC05771B /* Pods_Reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFA1D8F14B851C733EAAF51 /* Pods-Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.debug.xcconfig"; path = "Target Support Files/Pods-Reader/Pods-Reader.debug.xcconfig"; sourceTree = "<group>"; };
 		DC9878FF1446E8F0FC6C21D6 /* Pods-Reader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.release.xcconfig"; path = "Target Support Files/Pods-Reader/Pods-Reader.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				245697A72813DF100070928C /* DeferView.swift */,
 				245697A92813E38E0070928C /* BookCover.swift */,
 				2469542828177EFE00988075 /* Avatar.swift */,
+				24ED40A628179DB400C2F95F /* BlurView.swift */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				2482073D27F3515200752651 /* BookstorePage.swift in Sources */,
 				243180C92812625300FBB9FA /* Convertible.swift in Sources */,
 				2482075A27F3515200752651 /* SectionHeader.swift in Sources */,
+				24ED40A728179DB400C2F95F /* BlurView.swift in Sources */,
 				245697E22816914E0070928C /* FoundationExtension.swift in Sources */,
 				24AD1A7E28114DE300CA9B63 /* BookDetailPage.swift in Sources */,
 				2482075827F3515200752651 /* Color+Utility.swift in Sources */,
@@ -628,6 +632,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -658,6 +663,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

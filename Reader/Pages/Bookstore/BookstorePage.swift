@@ -14,13 +14,13 @@ struct BookstorePage: View {
     
     var body: some View {
         VStack {
-            TopBarView(titles: tabs.map { $0.title() }, selection: $pageIndex)
+            TopBarView(titles: tabs.map { $0.title() }, selection: $pageIndex).padding(.top, Screen.safeAreaInsets.top)
             TabView(selection: $pageIndex) {
                 ForEach(0..<4) { idx in
                     BookstoreListView(viewModel: BookstoreViewModel(type: tabs[idx])).tag(idx)
                 }
             }.tabViewStyle(.page(indexDisplayMode: .never))
-        }.navigationBarHidden(true)
+        }.ignoresSafeArea()
     }
 }
 

@@ -30,7 +30,7 @@ struct BookshelfPage: View {
                 }
                 
                 firstBook
-            }
+            }.padding(.top, Screen.safeAreaInsets.top)
         }
     }
     
@@ -73,15 +73,17 @@ struct BookshelfPage: View {
             LazyVStack {
                 header
                 gridView
-            }
-        }.navigationBarHidden(true)
+            }.padding(.bottom, Screen.tabbarHeight)
+        }.ignoresSafeArea()
     }
     
     var body: some View {
-        if viewModel.fetchStatus == .fetching {
-            ProgressView()
-        } else {
-            content
+        Group {
+            if viewModel.fetchStatus == .fetching {
+                ProgressView()
+            } else {
+                content
+            }
         }
     }
 }
