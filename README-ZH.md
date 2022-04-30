@@ -18,10 +18,11 @@ Language: [English](README.md) | 中文
     * 自定义卡片
     * 自定义毛玻璃效果的控件
 * 书架页
-    * 自定义NavigationBar（根据scroll view offset控制显示/隐藏）
+    * 自定义NavigationBar（根据ScrollView的offset控制显示/隐藏）
 * 个人页
 * 书籍详情页
     * 实现常规动画
+    * 弹出全屏覆盖页面
 * 阅读页
     * 菜单的出现/消失动画
 * 其他功能：

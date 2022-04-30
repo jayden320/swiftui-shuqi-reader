@@ -22,6 +22,7 @@ Reimplemented part of the functionality of this project using swiftUI: [flutter_
 * Profile page
 * Book detail page
     * Regular animation
+    * Show full screen cover
 * Reading page
     * Transition animation for menu
 * Other feature

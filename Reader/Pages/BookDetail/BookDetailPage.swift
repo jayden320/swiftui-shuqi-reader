@@ -12,6 +12,7 @@ struct BookDetailPage: View {
     @ObservedObject var vm: BookDetailViewModel
     
     @State var isSummaryUnfold: Bool = false
+    @State var isReading = false
     
     init(id: String) {
         vm = BookDetailViewModel(bookId: id)
@@ -118,8 +119,8 @@ struct BookDetailPage: View {
                     } label: {
                         Text("加书架").frame(maxWidth: .infinity)
                     }
-                    DeferNavigationLink {
-                        ReaderPage(vm: ReaderViewModel(bookId: book.id))
+                    Button {
+                        isReading = true
                     } label: {
                         Text("开始阅读").frame(maxWidth: .infinity,maxHeight: 40).foregroundColor(ThemeColor.card).background(ThemeColor.primary).cornerRadius(5)
                     }
@@ -156,7 +157,12 @@ struct BookDetailPage: View {
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
             Image("pub_back_gray").renderingMode(.template).foregroundColor(ThemeColor.darkGray)
-        })).navigationBarTitleDisplayMode(.inline).navigationTitle(vm.book?.name ?? "")
+        }))
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(vm.book?.name ?? "")
+        .fullScreenCover(isPresented: $isReading) {
+            ReaderPage(vm: ReaderViewModel(bookId: book.id))
+        }
     }
     
     var body: some View {

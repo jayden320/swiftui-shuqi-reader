@@ -72,10 +72,14 @@ struct BookshelfPage: View {
                 BookCover(url: book.imgUrl, width: Drawing.firstBookWidth)
                 VStack(alignment: .leading) {
                     Text(book.name).font(.title)
-                    HStack {
-                        Text("读至0.2%")
-                        Text("继续阅读")
-                        Image("bookshelf_continue_read")
+                    DeferNavigationLink {
+                        BookDetailPage(id: book.id)
+                    } label: {
+                        HStack {
+                            Text("读至0.2%")
+                            Text("继续阅读")
+                            Image("bookshelf_continue_read")
+                        }
                     }
                 }.foregroundColor(Color.white)
                 .padding(.leading)

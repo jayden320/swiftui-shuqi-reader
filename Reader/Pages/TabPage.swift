@@ -40,8 +40,6 @@ struct TabPage: View {
                 print("On tap tab bar item \(newValue)")
                 NavigationCoordinator.shared.tabBarIndex = newValue
             }
-        }.onAppear {
-            
         }
     }
     
