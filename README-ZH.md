@@ -33,11 +33,11 @@ Language: [English](README.md) | 中文
 
 ## 截图 📸
 
-| ![1](https://pic.lienav.com/i/2022/04/30/626d0245e51cd.png)   | ![2](https://pic.lienav.com/i/2022/04/30/626d024800fdd.png)   | ![3](https://pic.lienav.com/i/2022/04/30/626d024988651.png)   |
+| ![1](https://i.postimg.cc/1RN8qYjR/light-1.png)   | ![2](https://i.postimg.cc/QxGHkk2Q/light-2.png)   | ![3](https://i.postimg.cc/nc4Md9x6/light-3.png)   |
 |----------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|
-| ![4](https://pic.lienav.com/i/2022/04/30/626d024b18917.png)   | ![5](https://pic.lienav.com/i/2022/04/30/626d024c3f733.png)   | ![6](https://pic.lienav.com/i/2022/04/30/626d024d749d0.png)   |
-| ![7](https://pic.lienav.com/i/2022/04/30/626d0255a8875.png)   | ![8](https://pic.lienav.com/i/2022/04/30/626d0256ee602.png)   | ![9](https://pic.lienav.com/i/2022/04/30/626d0258a27b3.png)   |
-| ![10](https://pic.lienav.com/i/2022/04/30/626d025c26412.png)   | ![11](https://pic.lienav.com/i/2022/04/30/626d025e3d9da.png)   | ![12](https://pic.lienav.com/i/2022/04/30/626d025fbfabe.png)   |
+| ![4](https://i.postimg.cc/wj9MnxT3/light-4.png)   | ![5](https://i.postimg.cc/wjFMzK72/light-5.png)   | ![6](https://i.postimg.cc/W433b9Zv/light-6.png)   |
+| ![7](https://i.postimg.cc/638yzH60/dark-1.png)   | ![8](https://i.postimg.cc/wBf1XKzM/dark-2.png)   | ![9](https://i.postimg.cc/DwcJzJYq/dark-3.png)   |
+| ![10](https://i.postimg.cc/0N26KkLh/dark-4.png)   | ![11](https://i.postimg.cc/1X641fqV/dark-5.png)   | ![12](https://i.postimg.cc/k4LDHxBd/dark-6.png)   |
 
 ## 运行 🍭
 
