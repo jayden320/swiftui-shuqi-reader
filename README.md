@@ -31,11 +31,11 @@ Reimplemented part of the functionality of this project using swiftUI: [flutter_
 
 ## Screenshots 📸
 
-| ![1](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_1.png)   | ![2](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_2.png)   | ![3](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_3.png)   |
+| ![1](https://i.postimg.cc/1RN8qYjR/light-1.png)   | ![2](https://i.postimg.cc/QxGHkk2Q/light-2.png)   | ![3](https://i.postimg.cc/nc4Md9x6/light-3.png)   |
 |----------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|
-| ![4](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_4.png)   | ![5](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_5.png)   | ![6](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/light_6.png)   |
-| ![7](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_1.png)   | ![8](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_2.png)   | ![9](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_3.png)   |
-| ![10](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_4.png)   | ![11](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_5.png)   | ![12](https://github.com/huanxsd/swiftui-shuqi-reader/blob/master/screenshot/dark_6.png)   |
+| ![4](https://i.postimg.cc/wj9MnxT3/light-4.png)   | ![5](https://i.postimg.cc/wjFMzK72/light-5.png)   | ![6](https://i.postimg.cc/W433b9Zv/light-6.png)   |
+| ![7](https://i.postimg.cc/638yzH60/dark-1.png)   | ![8](https://i.postimg.cc/wBf1XKzM/dark-2.png)   | ![9](https://i.postimg.cc/DwcJzJYq/dark-3.png)   |
+| ![10](https://i.postimg.cc/0N26KkLh/dark-4.png)   | ![11](https://i.postimg.cc/1X641fqV/dark-5.png)   | ![12](https://i.postimg.cc/k4LDHxBd/dark-6.png)   |
 
 ## Setup 🍭
 
