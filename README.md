@@ -11,11 +11,14 @@ Language: English | [中文](README-ZH.md)
 ## Features ✨
 
 Reimplemented part of the functionality of this project using swiftUI: [flutter_shuqi](https://github.com/huanxsd/flutter_shuqi)
+* Main tab page:
+    * Handle UINavigationControllerDelegate
 * Bookstore page: 
     * Tab view with page style
     * Custom card
     * Widget for blurred backgrounds
 * Bookshelf page
+    * Customize NavigationBar (show/hide according to ScrollView's offset)
 * Profile page
 * Book detail page
     * Regular animation

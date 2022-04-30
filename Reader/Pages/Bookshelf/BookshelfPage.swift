@@ -7,11 +7,40 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import Introspect
 
 struct BookshelfPage: View {
     @Environment(\.colorScheme) var colorScheme
     
     @ObservedObject var viewModel: BookshelfViewModel
+    @State var isNavigationBarHidden = true
+    
+    let scrollViewDelegate = BookshelfPageScrollHandler()
+    
+    var navigationBar: some View {
+        ZStack(alignment: .bottom) {
+            BlurView(blurEffect: UIBlurEffect(style: .systemThinMaterial)).frame(height: Screen.navigationBarHeight)
+            
+            VStack(spacing: 0) {
+                HStack(spacing: 0) {
+                    Spacer(minLength: Drawing.navigationItemWidth * 2)
+                    Spacer()
+                    Text("书架").font(.bold(.body)())
+                    Spacer()
+                    Button {} label: {
+                        Image("actionbar_checkin").renderingMode(.template).foregroundColor(ThemeColor.darkGray)
+                    }.frame(width: Drawing.navigationItemWidth)
+                    Button {} label: {
+                        Image("actionbar_search").renderingMode(.template).foregroundColor(ThemeColor.darkGray)
+                    }.frame(width: Drawing.navigationItemWidth)
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
+                Divider()
+            }
+        }
+        .transition(.opacity)
+    }
     
     var header: some View {
         return ZStack(alignment: .topLeading) {
@@ -19,19 +48,18 @@ struct BookshelfPage: View {
                 Group {
                    Image("bookshelf_bg").resizable()
                    Image("bookshelf_cloud_0").resizable()
-                }.scaledToFill().frame(height: 300, alignment: .bottom)
+                }.frame(height: Drawing.topViewHeight + Screen.safeAreaInsets.top, alignment: .bottom)
             }
             VStack {
                 HStack {
                     Spacer()
                     Button {} label: {
                         Image("actionbar_checkin")
-                    }.padding(.trailing)
+                    }.frame(width: Drawing.navigationItemWidth)
                     Button {} label: {
                         Image("actionbar_search")
-                    }.padding(.trailing)
-                }
-                
+                    }.frame(width: Drawing.navigationItemWidth)
+                }.padding([.top, .trailing])
                 firstBook
             }.padding(.top, Screen.safeAreaInsets.top)
         }
@@ -41,8 +69,8 @@ struct BookshelfPage: View {
     var firstBook: some View {
         if let book = viewModel.books.first {
             HStack {
-                BookCover(url: book.imgUrl, width: 120)
-                VStack(alignment: .leading, spacing: 30) {
+                BookCover(url: book.imgUrl, width: Drawing.firstBookWidth)
+                VStack(alignment: .leading) {
                     Text(book.name).font(.title)
                     HStack {
                         Text("读至0.2%")
@@ -50,7 +78,7 @@ struct BookshelfPage: View {
                         Image("bookshelf_continue_read")
                     }
                 }.foregroundColor(Color.white)
-                .padding(.leading, 10.0)
+                .padding(.leading)
                 Spacer()
             }.padding(.leading)
         }
@@ -62,7 +90,7 @@ struct BookshelfPage: View {
         if books.count <= 1 {
              Spacer()
         } else {
-            LazyVGrid(columns: [GridItem(spacing: 15), GridItem(spacing: 15), GridItem(spacing: 15)], spacing: 15) {
+            LazyVGrid(columns: [GridItem(spacing: Drawing.gridSpacing), GridItem(spacing: Drawing.gridSpacing), GridItem(spacing: Drawing.gridSpacing)], spacing: Drawing.gridRunSpacing) {
                  ForEach(books.dropFirst()) { book in
                     BookVItemView(book: book)
                 }
@@ -72,12 +100,25 @@ struct BookshelfPage: View {
     }
     
     var content: some View {
-        ScrollView {
-            LazyVStack {
-                header
-                gridView
-            }.padding(.bottom, Screen.tabbarHeight)
-        }.background(ThemeColor.card).ignoresSafeArea()
+        ZStack(alignment: .top) {
+            ScrollView {
+                LazyVStack {
+                    header
+                    gridView
+                }.padding(.bottom, Screen.tabbarHeight)
+            }
+            .background(ThemeColor.card)
+            .introspectScrollView { scrollView in
+                scrollView.delegate = scrollViewDelegate
+                scrollViewDelegate.isNavigationBarHidden = $isNavigationBarHidden
+            }
+            // Need to set zIndex in ZStack, in order to run transition animation
+            // https://stackoverflow.com/questions/57730074/transition-animation-not-working-in-swiftui
+            .zIndex(0)
+            if !isNavigationBarHidden {
+                navigationBar.zIndex(1)
+            }
+        }.ignoresSafeArea()
     }
     
     var body: some View {
@@ -86,6 +127,28 @@ struct BookshelfPage: View {
                 ProgressView()
             } else {
                 content
+            }
+        }
+    }
+    
+    private struct Drawing {
+        static let navigationItemWidth = 50.0
+        static let topViewHeight = 250.0
+        static let firstBookWidth = 120.0
+        static let gridSpacing = 15.0
+        static let gridRunSpacing = 15.0
+    }
+}
+
+class BookshelfPageScrollHandler: NSObject, UIScrollViewDelegate {
+    var isNavigationBarHidden: Binding<Bool>?
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        withAnimation {
+            if scrollView.contentOffset.y > Screen.navigationBarHeight {
+                isNavigationBarHidden?.wrappedValue = false
+            } else {
+                isNavigationBarHidden?.wrappedValue = true
             }
         }
     }
@@ -145,20 +208,8 @@ struct BookshelfPage: View {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 struct BookshelfPage_Previews: PreviewProvider {
     static var previews: some View {
-        BookshelfPage(viewModel: BookshelfViewModel.mock()).preferredColorScheme(.dark)
+        BookshelfPage(viewModel: BookshelfViewModel.mock()).preferredColorScheme(.light)
     }
 }
