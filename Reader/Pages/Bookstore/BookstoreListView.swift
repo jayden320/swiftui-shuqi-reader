@@ -21,12 +21,12 @@ struct BookstoreListView: View {
                                 Rectangle().foregroundColor(ThemeColor.lightGray)
                             }.resizable()
                         }
-                    }.tabViewStyle(PageTabViewStyle()).aspectRatio(5/3, contentMode: .fill)
+                    }.tabViewStyle(PageTabViewStyle()).aspectRatio(Drawing.carouselAspect, contentMode: .fill)
                 }
                 if let menus = viewModel.menus {
                     BookstoreMenuView(menus: menus)
                 }
-                Spacer(minLength: 20)
+                Spacer(minLength: Drawing.sectionHeight)
                 
                 ForEach(viewModel.cards, id: \.title) { card in
                     SectionHeader(title: card.title)
@@ -40,10 +40,10 @@ struct BookstoreListView: View {
                     case .unknow:
                         BookGridView(books: card.books)
                     }
-                    Spacer(minLength: 20)
+                    Spacer(minLength: Drawing.sectionHeight)
                 }.foregroundColor(ThemeColor.darkGray)
-            }.padding(EdgeInsets(top: Screen.safeAreaInsets.top, leading: 0, bottom: Screen.tabbarHeight, trailing: 0))
-        }.background(ThemeColor.card).ignoresSafeArea()
+            }.padding(EdgeInsets(top: Screen.safeAreaInsets.top, leading: 0, bottom: Drawing.tabBarHeight, trailing: 0))
+        }.background(ThemeColor.card)
     }
     
     var body: some View {
@@ -52,5 +52,11 @@ struct BookstoreListView: View {
         } else {
             content
         }
+    }
+    
+    private struct Drawing {
+        static let carouselAspect: CGFloat = 5/3
+        static let tabBarHeight = 50.0
+        static let sectionHeight = 20.0
     }
 }

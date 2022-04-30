@@ -11,12 +11,19 @@ Language: English | [中文](README-ZH.md)
 ## Features ✨
 
 Reimplemented part of the functionality of this project using swiftUI: [flutter_shuqi](https://github.com/huanxsd/flutter_shuqi)
-- Bookstore page
-- Bookshelf page
-- Profile page
-- Book detail page
-- Reading page
-- Dark / Light mode support
+* Bookstore page: 
+    * Tab view with page style
+    * Custom card
+    * Widget for blurred backgrounds
+* Bookshelf page
+* Profile page
+* Book detail page
+    * Regular animation
+* Reading page
+    * Transition animation for menu
+* Other feature
+    * Dark / Light mode support
+    * Defer view and defer navigation link
 
 ## Screenshots 📸
 

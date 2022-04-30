@@ -12,8 +12,10 @@ struct BookVItemView: View {
     let book: Book
     
     var body: some View {
-        NavigationLink(destination: DeferView { BookDetailPage(id: book.id) }) {
-            VStack(alignment: .leading) { 
+        DeferNavigationLink {
+            BookDetailPage(id: book.id)
+        } label: {
+            VStack(alignment: .leading) {
                 BookCover(url: book.imgUrl)
                 Text(book.name).font(.bold(.body)()).lineLimit(1).foregroundColor(ThemeColor.darkGray)
                 Spacer(minLength: 5)
@@ -27,7 +29,9 @@ struct BookHItemView: View {
     let book: Book
     
     var body: some View {
-        NavigationLink(destination: DeferView { BookDetailPage(id: book.id) }) {
+        DeferNavigationLink {
+            BookDetailPage(id: book.id)
+        } label: {
             HStack {
                 BookCover(url: book.imgUrl, width: 60)
                 VStack(alignment: .leading) {
@@ -45,7 +49,9 @@ struct BookCell: View {
     let book: Book
     
     var body: some View {
-        NavigationLink(destination: DeferView { BookDetailPage(id: book.id) }) {
+        DeferNavigationLink {
+            BookDetailPage(id: book.id)
+        } label: {
             HStack() {
                 BookCover(url: book.imgUrl, width: 70)
                 VStack(alignment: .leading) {

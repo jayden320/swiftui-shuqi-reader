@@ -11,12 +11,19 @@ Language: [English](README.md) | 中文
 ## 功能 ✨
 
 使用swiftUI重新实现了这个项目的部分功能: [flutter_shuqi](https://github.com/huanxsd/flutter_shuqi)
-- 书城页
-- 书架页
-- 我的页
-- 书籍详情页
-- 阅读页
-- 支持日间/夜间模式
+* 书城页
+    * page样式的tab view
+    * 自定义卡片
+    * 自定义毛玻璃效果的控件
+* 书架页
+* 个人页
+* 书籍详情页
+    * 实现常规动画
+* 阅读页
+    * 菜单的出现/消失动画
+* 其他功能：
+    * 支持日间/夜间模式
+    * 延迟加载的view，延迟加载的navigation link
 
 我试着让这个Demo的结构尽量接近实际项目，同时使用比较简单方式去实现功能。这样可以让刚接触SwiftUI的人更够容易理解代码。
 

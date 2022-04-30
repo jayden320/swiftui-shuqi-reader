@@ -118,7 +118,7 @@ struct BookDetailPage: View {
                     } label: {
                         Text("加书架").frame(maxWidth: .infinity)
                     }
-                    NavigationLink {
+                    DeferNavigationLink {
                         ReaderPage(vm: ReaderViewModel(bookId: book.id))
                     } label: {
                         Text("开始阅读").frame(maxWidth: .infinity,maxHeight: 40).foregroundColor(ThemeColor.card).background(ThemeColor.primary).cornerRadius(5)

@@ -19,30 +19,32 @@ struct ReaderPage: View {
     
     var menuPanel: some View {
         VStack {
-            ReaderTopMenuPanel()
+            if isMenuVisible { ReaderTopMenuPanel().transition(.offset(x: 0, y: -Screen.navigationBarHeight)) }
             Spacer()
-            ReaderBottomMenuPanel(progress: $vm.progress)
+            if isMenuVisible { ReaderBottomMenuPanel(progress: $vm.progress).transition(.offset(x: 0, y: Drawing.bottomMenuOffset + Screen.safeAreaInsets.bottom)) }
         }.ignoresSafeArea()
     }
     
     var content: some View {
+        VStack(alignment: .leading) {
+            Text(article.title).foregroundColor(ThemeColor.gray).font(.subheadline)
+            ScrollView {
+                VStack(alignment: .leading) {
+                    Text(article.title).font(.largeTitle).padding(.vertical, Drawing.titleVerticalPadding)
+                    Text(article.content)
+                }.foregroundColor(ThemeColor.darkGray)
+            }
+            ReaderBottomView(vm: vm)
+        }.padding()
+    }
+    
+    var main: some View {
         ZStack {
             if colorScheme == .light {
                 Image("read_bg").resizable().ignoresSafeArea()
             }
-            VStack(alignment: .leading) {
-                Text(article.title).foregroundColor(ThemeColor.gray).font(.subheadline)
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 30) {
-                        Text(article.title).font(.largeTitle).padding(.top, 30)
-                        Text(article.content)
-                    }.foregroundColor(ThemeColor.darkGray)
-                }
-                ReaderBottomView(vm: vm)
-            }.padding()
-            if isMenuVisible {
-                menuPanel
-            }
+            content
+            menuPanel
         }.onTapGesture {
             withAnimation {
                 isMenuVisible = !isMenuVisible
@@ -55,9 +57,14 @@ struct ReaderPage: View {
             if vm.fetchStatus == .fetching {
                 ProgressView()
             } else {
-                content
+                main
             }
         }.navigationBarHidden(true)
+    }
+    
+    private struct Drawing {
+        static let bottomMenuOffset = 130.0
+        static let titleVerticalPadding = 30.0
     }
 }
 
