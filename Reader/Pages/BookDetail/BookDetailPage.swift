@@ -27,9 +27,9 @@ struct BookDetailPage: View {
         if let introduction = book.introduction {
             ZStack(alignment: .bottomTrailing) {
                 HStack {
-                    Text(introduction).font(.subheadline).lineLimit(isSummaryUnfold ? nil : 3).padding(.horizontal)
+                    Text(introduction).font(.subheadline).lineLimit(isSummaryUnfold ? nil : Drawing.summaryLineLimit).padding(.horizontal)
                     Spacer()
-                }.padding(.vertical, 13)
+                }.padding(.vertical)
                 Image( "detail_up").rotationEffect(Angle(degrees: isSummaryUnfold ? 0 : 180)).padding()
             }.onTapGesture {
                 withAnimation {
@@ -64,7 +64,7 @@ struct BookDetailPage: View {
         HStack {
             ForEach(0..<book.tags.count, id: \.self) { index in
                 let color = Drawing.tagColors[index % 3]
-                Text(book.tags[index]).font(.subheadline).foregroundColor(color).padding(EdgeInsets(top: 2, leading: 5, bottom: 2, trailing: 5)).border(color.opacity(0.3))
+                Text(book.tags[index]).font(.subheadline).foregroundColor(color).padding(Drawing.tagPadding).border(color.opacity(Drawing.tagBorderOpacity))
             }
         }.padding(Drawing.cellPadding)
     }
@@ -78,7 +78,7 @@ struct BookDetailPage: View {
                 Spacer()
                 Image("detail_write_comment")
                 Text("写书评").foregroundColor(ThemeColor.primary).font(.subheadline)
-            }.padding(EdgeInsets(top: 13, leading: 0, bottom: 13, trailing: 15))
+            }.padding(Drawing.sectionPadding)
             Divider()
             ForEach(comments) { comment in
                 CommentCell(comment: comment)
@@ -95,18 +95,18 @@ struct BookDetailPage: View {
             HStack {
                 Image("home_tip")
                 Text("书友看过本书的人还在看")
-            }.padding(EdgeInsets(top: 13, leading: 0, bottom: 13, trailing: 15))
-            LazyVGrid(columns: [GridItem(),GridItem(),GridItem(),GridItem()], spacing: 15) {
+            }.padding(Drawing.sectionPadding)
+            LazyVGrid(columns: [GridItem(),GridItem(),GridItem(),GridItem()]) {
                 ForEach(books) { book in
                     BookVItemView(book: book)
                 }
-            }.padding(EdgeInsets.init(top: 0, leading: 15, bottom: 15, trailing: 15))
+            }.padding([.leading, .bottom, .trailing])
         }
     }
     
     var toolBar: some View {
         ZStack(alignment: .top) {
-            BlurView(blurEffect: UIBlurEffect(style: .systemThinMaterial)).frame(height: 50 + Screen.safeAreaInsets.bottom)
+            BlurView(blurEffect: UIBlurEffect(style: .systemThinMaterial)).frame(height: Drawing.toolBarHeight + Screen.safeAreaInsets.bottom)
             VStack(spacing: 0) {
                 Divider()
                 HStack(alignment: .center) {
@@ -122,13 +122,13 @@ struct BookDetailPage: View {
                     Button {
                         isReading = true
                     } label: {
-                        Text("开始阅读").frame(maxWidth: .infinity,maxHeight: 40).foregroundColor(ThemeColor.card).background(ThemeColor.primary).cornerRadius(5)
+                        Text("开始阅读").frame(maxWidth: .infinity,maxHeight: Drawing.toolBarButtonHeight).foregroundColor(ThemeColor.card).background(ThemeColor.primary).cornerRadius(Drawing.toolBarButtonCornerRadius)
                     }
 
                     Button {} label: {
                         Text("下载").frame(maxWidth: .infinity)
                     }
-                }.padding(.top, 5)
+                }.padding(.top, Drawing.toolBarPaddingTop)
             }
         }
     }
@@ -178,6 +178,13 @@ struct BookDetailPage: View {
         static let tagColors = [Color(hex: "F9A19F"), Color(hex: "59DDB9"), Color(hex: "7EB3E7")]
         static let cellDividerLeading = 20.0
         static let toolBarHeight = 50.0
+        static let summaryLineLimit = 3
+        static let tagPadding = EdgeInsets(top: 2, leading: 5, bottom: 2, trailing: 5)
+        static let tagBorderOpacity = 0.3
+        static let sectionPadding = EdgeInsets(top: 13, leading: 0, bottom: 13, trailing: 15)
+        static let toolBarButtonHeight = 40.0
+        static let toolBarButtonCornerRadius = 4.0
+        static let toolBarPaddingTop = 5.0
     }
 }
 

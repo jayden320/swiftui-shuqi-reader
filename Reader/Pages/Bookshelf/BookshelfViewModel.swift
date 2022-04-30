@@ -30,11 +30,6 @@ class BookshelfViewModel: ObservableObject {
     }
     
     func request(completion: ()->Void) {
-//        let url = Bundle.main.url(forResource: "bookshelf", withExtension: "json")
-//              let response = try? Data(contentsOf: url!)
-//              let json = try? JSONSerialization.jsonObject(with: response!, options: []) as? [String: Any]
-//              let data = json!["data"] as! [[String: Any]]
-//        let booksData = try? JSONSerialization.data(withJSONObject: data, options: [])
         guard let url = Bundle.main.url(forResource: "bookshelf", withExtension: "json"),
               let response = try? Data(contentsOf: url),
               let json = try? JSONSerialization.jsonObject(with: response, options: []) as? [String: Any],

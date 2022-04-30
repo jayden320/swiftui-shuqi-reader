@@ -19,12 +19,13 @@ struct MeCell: View {
                 Spacer()
                 Image("arrow_right")
             }.padding(.horizontal).frame(height: Drawing.cellHeight)
-            Divider().padding(.leading, 50)
+            Divider().padding(.leading, Drawing.dividerPaddingLeading)
         }
     }
     
     private struct Drawing {
         static let cellHeight = 50.0
+        static let dividerPaddingLeading = 50.0
     }
 }
 
