@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240775DD2823A552004D50AF /* BookshelfService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240775DC2823A552004D50AF /* BookshelfService.swift */; };
+		240775FD2823AC56004D50AF /* BookstoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240775FC2823AC56004D50AF /* BookstoreService.swift */; };
+		240776592823B981004D50AF /* BookDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240776582823B981004D50AF /* BookDetailService.swift */; };
+		240776A02823C20B004D50AF /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2407769F2823C20B004D50AF /* ServiceError.swift */; };
 		243180C92812625300FBB9FA /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243180C82812625300FBB9FA /* Convertible.swift */; };
 		2431817328129C2A00FBB9FA /* BookshelfViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2431817228129C2A00FBB9FA /* BookshelfViewModel.swift */; };
 		2431817628129C4A00FBB9FA /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2431817528129C4A00FBB9FA /* Book.swift */; };
@@ -71,6 +75,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		240775DC2823A552004D50AF /* BookshelfService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfService.swift; sourceTree = "<group>"; };
+		240775FC2823AC56004D50AF /* BookstoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreService.swift; sourceTree = "<group>"; };
+		240776582823B981004D50AF /* BookDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailService.swift; sourceTree = "<group>"; };
+		2407769F2823C20B004D50AF /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		243180C82812625300FBB9FA /* Convertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convertible.swift; sourceTree = "<group>"; };
 		2431817228129C2A00FBB9FA /* BookshelfViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfViewModel.swift; sourceTree = "<group>"; };
 		2431817528129C4A00FBB9FA /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -180,6 +188,7 @@
 				2482071127F3515200752651 /* BookstoreListView.swift */,
 				2482071327F3515200752651 /* BookstorePage.swift */,
 				2431817828129C8200FBB9FA /* BookstoreModel.swift */,
+				240775FC2823AC56004D50AF /* BookstoreService.swift */,
 			);
 			path = Bookstore;
 			sourceTree = "<group>";
@@ -189,6 +198,7 @@
 			children = (
 				2482071827F3515200752651 /* BookshelfPage.swift */,
 				2431817228129C2A00FBB9FA /* BookshelfViewModel.swift */,
+				240775DC2823A552004D50AF /* BookshelfService.swift */,
 			);
 			path = Bookshelf;
 			sourceTree = "<group>";
@@ -244,6 +254,7 @@
 			children = (
 				2482070C27F3515200752651 /* AppConstants.swift */,
 				2482073227F3515200752651 /* ReaderApp.swift */,
+				2407769F2823C20B004D50AF /* ServiceError.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -293,6 +304,7 @@
 				24DAEE5D28164D280040165A /* BookDetailViewModel.swift */,
 				24DAEE6128164D280040165A /* BookDetailHeader.swift */,
 				246954062817779F00988075 /* CommentCell.swift */,
+				240776582823B981004D50AF /* BookDetailService.swift */,
 			);
 			path = BookDetail;
 			sourceTree = "<group>";
@@ -505,6 +517,7 @@
 				246954072817779F00988075 /* CommentCell.swift in Sources */,
 				2469542928177EFE00988075 /* Avatar.swift in Sources */,
 				2482073B27F3515200752651 /* BookstoreListView.swift in Sources */,
+				240776592823B981004D50AF /* BookDetailService.swift in Sources */,
 				2482073F27F3515200752651 /* BookHybirdView.swift in Sources */,
 				24CDF00A2815359100DE4C47 /* UIKitExtension.swift in Sources */,
 				2482073927F3515200752651 /* BookstoreViewModel.swift in Sources */,
@@ -527,6 +540,7 @@
 				243180C92812625300FBB9FA /* Convertible.swift in Sources */,
 				24CDF1742819089500DE4C47 /* ReaderPage.swift in Sources */,
 				24CDF28228191B0900DE4C47 /* ReaderBottomView.swift in Sources */,
+				240775FD2823AC56004D50AF /* BookstoreService.swift in Sources */,
 				2482075A27F3515200752651 /* SectionHeader.swift in Sources */,
 				24ED40A728179DB400C2F95F /* BlurView.swift in Sources */,
 				245697E22816914E0070928C /* FoundationExtension.swift in Sources */,
@@ -535,7 +549,9 @@
 				24CDF1762819089D00DE4C47 /* ReaderViewModel.swift in Sources */,
 				2482074327F3515200752651 /* MePage.swift in Sources */,
 				24CDF39C2819279900DE4C47 /* ReaderTopMenuPanel.swift in Sources */,
+				240776A02823C20B004D50AF /* ServiceError.swift in Sources */,
 				2482073C27F3515200752651 /* TopBarView.swift in Sources */,
+				240775DD2823A552004D50AF /* BookshelfService.swift in Sources */,
 				2482073A27F3515200752651 /* BookHorizontalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

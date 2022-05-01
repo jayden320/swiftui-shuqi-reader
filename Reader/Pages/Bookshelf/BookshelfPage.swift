@@ -132,6 +132,10 @@ struct BookshelfPage: View {
             } else {
                 content
             }
+        }.onAppear {
+            if viewModel.books.count == 0 {
+                Task { await  viewModel.fetchData() }
+            }
         }
     }
     

@@ -11,6 +11,8 @@ import Introspect
 struct TabPage: View {
     @State private var tabBarIndex = NavigationCoordinator.shared.tabBarIndex
     
+    @State private var bookshelfVM = BookshelfViewModel()
+    
     static let tabItemInfos = [
         TabItemInfo(title: "书架",
                     imageName: "tab_bookshelf_n",
@@ -29,7 +31,7 @@ struct TabPage: View {
     var body: some View {
         NavigationView() {
             TabView(selection: $tabBarIndex) {
-                BookshelfPage(viewModel: BookshelfViewModel()).tabItem { createTabItem(TabPage.tabItemInfos[0]) }.tag(0)
+                BookshelfPage(viewModel: bookshelfVM).tabItem { createTabItem(TabPage.tabItemInfos[0]) }.tag(0)
                 BookstorePage().tabItem { createTabItem(TabPage.tabItemInfos[1]) }.tag(1)
                 MePage().tabItem { createTabItem(TabPage.tabItemInfos[2]) }.tag(2)
             }.navigationBarTitleDisplayMode(.inline).introspectNavigationController { (navigationController) in

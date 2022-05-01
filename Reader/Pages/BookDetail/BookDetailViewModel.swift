@@ -8,25 +8,31 @@
 import Foundation
 
 class BookDetailViewModel: ObservableObject {
-    @Published var fetchStatus: FetchStatus = .idle
+    @Published var fetchStatus: FetchStatus = .fetching
     
     let bookId: String
-    @Published var book: BookDetail?
-    @Published var comments: [BookComment]?
-    @Published var recommendBooks: [Book]?
+    var book: BookDetail?
+    var comments: [BookComment]?
+    var recommendBooks: [Book]?
     
     init(bookId: String) {
         self.bookId = bookId
-        fetchData()
+        Task { await fetchData() }
     }
     
-    
-    func fetchData() {
-        fetchStatus = .fetching
-        requestDetail()
-        requestComments()
-        requestrecommendBooks()
-        fetchStatus = .idle
+    @MainActor
+    func fetchData() async {
+        do {
+            fetchStatus = .fetching
+            
+            book = try await BookDetailService.requestDetail()
+            comments = try await BookDetailService.requestComments()
+            recommendBooks = try await BookDetailService.requestRecommendBooks()
+            
+            fetchStatus = .idle
+        } catch {
+            fetchStatus = .failed
+        }
     }
     
     func requestDetail(completion: (()->Void)? = nil) {

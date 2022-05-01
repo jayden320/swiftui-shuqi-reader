@@ -153,11 +153,7 @@ struct BookDetailPage: View {
                 }.padding(.bottom, Screen.safeAreaInsets.bottom + Drawing.toolBarHeight)
             }
             toolBar
-        }.background(ThemeColor.card).ignoresSafeArea().navigationBarBackButtonHidden(true).navigationBarItems(leading: Button(action: {
-            self.presentationMode.wrappedValue.dismiss()
-        }, label: {
-            Image("pub_back_gray").renderingMode(.template).foregroundColor(ThemeColor.darkGray)
-        }))
+        }.background(ThemeColor.card).ignoresSafeArea()
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(vm.book?.name ?? "")
         .fullScreenCover(isPresented: $isReading) {
@@ -166,11 +162,17 @@ struct BookDetailPage: View {
     }
     
     var body: some View {
-        if vm.fetchStatus == .fetching {
-            ProgressView()
-        } else {
-            content
-        }
+        Group {
+            if vm.fetchStatus == .fetching {
+                ProgressView()
+            } else {
+                content
+            }
+        }.navigationBarBackButtonHidden(true).navigationBarItems(leading: Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }, label: {
+            Image("pub_back_gray").renderingMode(.template).foregroundColor(ThemeColor.darkGray)
+        }))
     }
     
     private struct Drawing {

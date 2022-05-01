@@ -47,10 +47,16 @@ struct BookstoreListView: View {
     }
     
     var body: some View {
-        if viewModel.fetchStatus == .fetching {
-            ProgressView()
-        } else {
-            content
+        Group {
+            if viewModel.fetchStatus == .fetching {
+                ProgressView()
+            } else {
+                content
+            }
+        }.onAppear {
+            if viewModel.cards.isEmpty {
+                Task { await viewModel.fetchData() }
+            }
         }
     }
     
