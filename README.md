@@ -11,6 +11,12 @@ Language: English | [中文](README-ZH.md)
 ## Features ✨
 
 Reimplemented part of the functionality of this project using swiftUI: [flutter_shuqi](https://github.com/huanxsd/flutter_shuqi)
+* Native feature
+    * Device Type: iPhone / iPad
+    * Deployment Target: iOS 14.0
+    * Swift Version: Swift 5
+    * Device Orientation: Portrait / Upside Down / Landscape Left / Landscape Right
+    * Dark Mode: Enabled
 * Main tab page:
     * Handle UINavigationControllerDelegate
 * Bookstore page: 
@@ -25,17 +31,21 @@ Reimplemented part of the functionality of this project using swiftUI: [flutter_
     * Show full screen cover
 * Reading page
     * Transition animation for menu
-* Other feature
-    * Dark / Light mode support
-    * Defer view and defer navigation link
 
 ## Screenshots 📸
 
+### Vetical
 | ![1](https://i.postimg.cc/1RN8qYjR/light-1.png)   | ![2](https://i.postimg.cc/QxGHkk2Q/light-2.png)   | ![3](https://i.postimg.cc/nc4Md9x6/light-3.png)   |
 |----------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|
 | ![4](https://i.postimg.cc/wj9MnxT3/light-4.png)   | ![5](https://i.postimg.cc/wjFMzK72/light-5.png)   | ![6](https://i.postimg.cc/W433b9Zv/light-6.png)   |
 | ![7](https://i.postimg.cc/638yzH60/dark-1.png)   | ![8](https://i.postimg.cc/wBf1XKzM/dark-2.png)   | ![9](https://i.postimg.cc/DwcJzJYq/dark-3.png)   |
 | ![10](https://i.postimg.cc/0N26KkLh/dark-4.png)   | ![11](https://i.postimg.cc/1X641fqV/dark-5.png)   | ![12](https://i.postimg.cc/k4LDHxBd/dark-6.png)   |
+
+### Horizontal
+| ![13](https://i.postimg.cc/QNnphCp6/horizontal-1.png)   | ![14](https://i.postimg.cc/ZKGpvQsp/horizontal-2.png)   |
+|----------------------------------------------------------|----------------------------------------------------------|
+| ![15](https://i.postimg.cc/9Qnc83TN/horizontal-3.png)   | ![16](https://i.postimg.cc/pXhKTvCP/horizontal-4.png)   |
+
 
 ## Setup 🍭
 

@@ -25,7 +25,7 @@
 		2469542928177EFE00988075 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2469542828177EFE00988075 /* Avatar.swift */; };
 		247BE3CB281BA67F00215F9D /* DeferNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247BE3CA281BA67F00215F9D /* DeferNavigationLink.swift */; };
 		2482073827F3515200752651 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482070C27F3515200752651 /* AppConstants.swift */; };
-		2482073927F3515200752651 /* BookstoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482070F27F3515200752651 /* BookstoreViewModel.swift */; };
+		2482073927F3515200752651 /* BookstoreListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482070F27F3515200752651 /* BookstoreListViewModel.swift */; };
 		2482073A27F3515200752651 /* BookHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482071027F3515200752651 /* BookHorizontalView.swift */; };
 		2482073B27F3515200752651 /* BookstoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482071127F3515200752651 /* BookstoreListView.swift */; };
 		2482073C27F3515200752651 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482071227F3515200752651 /* TopBarView.swift */; };
@@ -93,7 +93,7 @@
 		2469542828177EFE00988075 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		247BE3CA281BA67F00215F9D /* DeferNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferNavigationLink.swift; sourceTree = "<group>"; };
 		2482070C27F3515200752651 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		2482070F27F3515200752651 /* BookstoreViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookstoreViewModel.swift; sourceTree = "<group>"; };
+		2482070F27F3515200752651 /* BookstoreListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookstoreListViewModel.swift; sourceTree = "<group>"; };
 		2482071027F3515200752651 /* BookHorizontalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookHorizontalView.swift; sourceTree = "<group>"; };
 		2482071127F3515200752651 /* BookstoreListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookstoreListView.swift; sourceTree = "<group>"; };
 		2482071227F3515200752651 /* TopBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				248208DE27F54D1400752651 /* Subview */,
-				2482070F27F3515200752651 /* BookstoreViewModel.swift */,
+				2482070F27F3515200752651 /* BookstoreListViewModel.swift */,
 				2482071127F3515200752651 /* BookstoreListView.swift */,
 				2482071327F3515200752651 /* BookstorePage.swift */,
 				2431817828129C8200FBB9FA /* BookstoreModel.swift */,
@@ -520,7 +520,7 @@
 				240776592823B981004D50AF /* BookDetailService.swift in Sources */,
 				2482073F27F3515200752651 /* BookHybirdView.swift in Sources */,
 				24CDF00A2815359100DE4C47 /* UIKitExtension.swift in Sources */,
-				2482073927F3515200752651 /* BookstoreViewModel.swift in Sources */,
+				2482073927F3515200752651 /* BookstoreListViewModel.swift in Sources */,
 				2431817928129C8200FBB9FA /* BookstoreModel.swift in Sources */,
 				2482073827F3515200752651 /* AppConstants.swift in Sources */,
 				2431817628129C4A00FBB9FA /* Book.swift in Sources */,
@@ -688,7 +688,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -719,7 +719,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

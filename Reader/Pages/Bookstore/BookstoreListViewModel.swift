@@ -14,6 +14,17 @@ enum FetchStatus {
 }
 
 class BookstoreViewModel: ObservableObject {
+    @Published var pageIndex = 0
+    
+    let list: [BookstoreListViewModel];
+    
+    init() {
+        let tabTypes: [BookstoreListType] = [.excellent, .female, .male, .cartoon]
+        list = tabTypes.map({ type in BookstoreListViewModel(type: type) })
+    }
+}
+
+class BookstoreListViewModel: ObservableObject {
     let type: BookstoreListType
     
     @Published var fetchStatus: FetchStatus = .idle

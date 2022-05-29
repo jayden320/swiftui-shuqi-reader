@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ReaderTopMenuPanel: View {
+    @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -25,8 +26,9 @@ struct ReaderTopMenuPanel: View {
             Button {} label: {
                 Image("read_icon_more").renderingMode(.template)
             }
-
-        }.foregroundColor(ThemeColor.darkGray).padding().padding(.top, Screen.safeAreaInsets.top).background(ThemeColor.card)
+        }
+        .padding(Screen.horizontalSafeAreaInsets())
+        .foregroundColor(ThemeColor.darkGray).padding().padding(.top, Screen.safeAreaInsets.top).background(ThemeColor.card)
     }
 }
 

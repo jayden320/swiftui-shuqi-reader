@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TopBarView: View {
+    @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
+    
     let titles: [String]
     @Binding var selection: Int
     
@@ -18,7 +20,7 @@ struct TopBarView: View {
             selection = index
         } label: {
             VStack(spacing: 5.0) {
-                Text(title).font(.title3).foregroundColor(isSelected ? ThemeColor.darkGray : ThemeColor.gray)
+                Text(title).font(.title3).foregroundColor(isSelected ? ThemeColor.darkGray : ThemeColor.dimGray)
                 RoundedRectangle(cornerRadius: 2)
                     .frame(width: 20, height: 4)
                     .foregroundColor(ThemeColor.secondary)

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BookDetailPage: View {
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
     @ObservedObject var vm: BookDetailViewModel
     
     @State var isSummaryUnfold: Bool = false
@@ -96,7 +97,9 @@ struct BookDetailPage: View {
                 Image("home_tip")
                 Text("书友看过本书的人还在看")
             }.padding(Drawing.sectionPadding)
-            LazyVGrid(columns: [GridItem(),GridItem(),GridItem(),GridItem()]) {
+            
+            let items = Array(repeating: GridItem(), count: horizontalSizeClass == .compact ? 4 : 8)
+            LazyVGrid(columns: items) {
                 ForEach(books) { book in
                     BookVItemView(book: book)
                 }
@@ -151,7 +154,7 @@ struct BookDetailPage: View {
                     commentsView
                     recommentView
                 }.padding(.bottom, Screen.safeAreaInsets.bottom + Drawing.toolBarHeight)
-            }
+            }.padding(Screen.horizontalSafeAreaInsets())
             toolBar
         }.background(ThemeColor.card).ignoresSafeArea()
         .navigationBarTitleDisplayMode(.inline)

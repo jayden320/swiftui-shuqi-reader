@@ -23,8 +23,8 @@ struct MePage: View {
                 MeCell(title: "Github", iconName: "me_action").onTapGesture {
                     UIApplication.shared.open(URL(string: "https://github.com/huanxsd/swiftui-shuqi-reader")!)
                 }
-            }.padding(EdgeInsets(top: Screen.safeAreaInsets.top, leading: 0, bottom: Screen.tabbarHeight, trailing: 0))
-        }.background(ThemeColor.card).ignoresSafeArea()
+            }
+        }.background(ThemeColor.card)
     }
 }
 

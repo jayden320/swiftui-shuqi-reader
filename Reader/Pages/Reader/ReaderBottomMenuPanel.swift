@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct ReaderBottomMenuPanel: View {
+    @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
+    
     @Binding var progress: Double
     
     private func buildButton(title: String, iconName: String) -> some View {
         VStack {
             Image(iconName).renderingMode(.template)
-            Text(title).font(.subheadline).frame(maxWidth: .infinity)
-        }
+            if verticalSizeClass == .regular {
+                Text(title).font(.subheadline)
+            }
+        }.frame(maxWidth: .infinity)
     }
     
     var body: some View {
@@ -36,7 +40,9 @@ struct ReaderBottomMenuPanel: View {
                 buildButton(title: "字体", iconName: "read_icon_font")
                 buildButton(title: "设置", iconName: "read_icon_setting")
             }
-        }.foregroundColor(ThemeColor.dimGray).padding().padding(.bottom, Screen.safeAreaInsets.bottom).background(ThemeColor.card)
+        }
+        .padding(Screen.horizontalSafeAreaInsets())
+        .foregroundColor(ThemeColor.dimGray).padding().padding(.bottom, Screen.safeAreaInsets.bottom).background(ThemeColor.card)
     }
 }
 

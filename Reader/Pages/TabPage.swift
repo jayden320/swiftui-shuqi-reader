@@ -12,6 +12,7 @@ struct TabPage: View {
     @State private var tabBarIndex = NavigationCoordinator.shared.tabBarIndex
     
     @State private var bookshelfVM = BookshelfViewModel()
+    @State private var bookstoreVM = BookstoreViewModel()
     
     static let tabItemInfos = [
         TabItemInfo(title: "书架",
@@ -32,7 +33,7 @@ struct TabPage: View {
         NavigationView() {
             TabView(selection: $tabBarIndex) {
                 BookshelfPage(viewModel: bookshelfVM).tabItem { createTabItem(TabPage.tabItemInfos[0]) }.tag(0)
-                BookstorePage().tabItem { createTabItem(TabPage.tabItemInfos[1]) }.tag(1)
+                BookstorePage(viewModel: bookstoreVM).tabItem { createTabItem(TabPage.tabItemInfos[1]) }.tag(1)
                 MePage().tabItem { createTabItem(TabPage.tabItemInfos[2]) }.tag(2)
             }.navigationBarTitleDisplayMode(.inline).introspectNavigationController { (navigationController) in
                 navigationController.navigationBar.isHidden = true
@@ -42,7 +43,7 @@ struct TabPage: View {
                 print("On tap tab bar item \(newValue)")
                 NavigationCoordinator.shared.tabBarIndex = newValue
             }
-        }
+        }.navigationViewStyle(.stack)
     }
     
     @ViewBuilder

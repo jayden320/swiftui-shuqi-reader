@@ -7,19 +7,23 @@
 
 import SwiftUI
 
+
 struct BookstorePage: View {
-    @State var pageIndex = 0
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
     
-    let tabs: [BookstoreListType] = [.excellent, .female, .male, .cartoon]
+    @State var pageIndex = 0
+    let viewModel: BookstoreViewModel
     
     var body: some View {
         ZStack(alignment: .top) {
-            TabView(selection: $pageIndex) {
-                ForEach(0..<4) { idx in
-                    BookstoreListView(viewModel: BookstoreViewModel(type: tabs[idx])).tag(idx)
+            ForEach(0..<viewModel.list.count, id: \.self) { idx in
+                if idx == pageIndex  {
+                    BookstoreListView(viewModel: viewModel.list[idx]).tag(idx).tag(idx)
                 }
-            }.tabViewStyle(.page(indexDisplayMode: .never))
-            TopBarView(titles: tabs.map { $0.title() }, selection: $pageIndex)
+            }
+            .frame(maxHeight: CGFloat.infinity)
+            
+            TopBarView(titles: viewModel.list.map { $0.type.title() }, selection: $pageIndex)
         }.ignoresSafeArea()
     }
 }
@@ -88,6 +92,6 @@ struct BookstorePage: View {
 struct BookstorePage_Previews: PreviewProvider {
     static var previews: some View {
 //        BookstorePage()
-        BookstorePage().preferredColorScheme(.dark)
+        BookstorePage(viewModel: BookstoreViewModel()).preferredColorScheme(.dark)
     }
 }

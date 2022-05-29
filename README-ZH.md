@@ -11,6 +11,12 @@ Language: [English](README.md) | 中文
 ## 功能 ✨
 
 使用swiftUI重新实现了这个项目的部分功能: [flutter_shuqi](https://github.com/huanxsd/flutter_shuqi)
+* 原生功能：
+    * 设备类型：iPhone / iPad
+    * 系统版本：iOS 14.0
+    * Swift版本：Swift 5
+    * 设备方向：支持横/竖屏
+    * 夜间模式：支持
 * 主页面
     * 处理UINavigationControllerDelegate
 * 书城页
@@ -25,19 +31,23 @@ Language: [English](README.md) | 中文
     * 弹出全屏覆盖页面
 * 阅读页
     * 菜单的出现/消失动画
-* 其他功能：
-    * 支持日间/夜间模式
-    * 延迟加载的view，延迟加载的navigation link
 
 我试着让这个Demo的结构尽量接近实际项目，同时使用比较简单方式去实现功能。这样可以让刚接触SwiftUI的人更够容易理解代码。
 
 ## 截图 📸
 
+### 竖屏
 | ![1](https://i.postimg.cc/1RN8qYjR/light-1.png)   | ![2](https://i.postimg.cc/QxGHkk2Q/light-2.png)   | ![3](https://i.postimg.cc/nc4Md9x6/light-3.png)   |
 |----------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|
 | ![4](https://i.postimg.cc/wj9MnxT3/light-4.png)   | ![5](https://i.postimg.cc/wjFMzK72/light-5.png)   | ![6](https://i.postimg.cc/W433b9Zv/light-6.png)   |
 | ![7](https://i.postimg.cc/638yzH60/dark-1.png)   | ![8](https://i.postimg.cc/wBf1XKzM/dark-2.png)   | ![9](https://i.postimg.cc/DwcJzJYq/dark-3.png)   |
 | ![10](https://i.postimg.cc/0N26KkLh/dark-4.png)   | ![11](https://i.postimg.cc/1X641fqV/dark-5.png)   | ![12](https://i.postimg.cc/k4LDHxBd/dark-6.png)   |
+
+### 横屏
+| ![13](https://i.postimg.cc/QNnphCp6/horizontal-1.png)   | ![14](https://i.postimg.cc/ZKGpvQsp/horizontal-2.png)   |
+|----------------------------------------------------------|----------------------------------------------------------|
+| ![15](https://i.postimg.cc/9Qnc83TN/horizontal-3.png)   | ![16](https://i.postimg.cc/pXhKTvCP/horizontal-4.png)   |
+
 
 ## 运行 🍭
 

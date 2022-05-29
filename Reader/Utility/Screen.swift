@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 class Screen {
     static var safeAreaInsets: UIEdgeInsets {
@@ -19,5 +20,9 @@ class Screen {
     
     static var tabbarHeight: CGFloat {
         50.0 + safeAreaInsets.bottom
+    }
+    
+    static func horizontalSafeAreaInsets(padding: CGFloat = 0) -> EdgeInsets {
+        EdgeInsets(top: 0, leading: safeAreaInsets.left + padding, bottom: 0, trailing: safeAreaInsets.right + padding)
     }
 }

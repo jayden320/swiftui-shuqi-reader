@@ -70,7 +70,6 @@ struct ReaderPage: View {
 
 struct ReaderPage_Previews: PreviewProvider {
     static var previews: some View {
-//        ReaderPage(vm: ReaderViewModel(bookId: "1"))
         ReaderPage(vm: ReaderViewModel(bookId: "1")).preferredColorScheme(.dark)
     }
 }

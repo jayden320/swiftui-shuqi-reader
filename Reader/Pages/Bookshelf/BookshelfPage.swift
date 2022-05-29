@@ -10,6 +10,8 @@ import SDWebImageSwiftUI
 import Introspect
 
 struct BookshelfPage: View {
+    @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
     @Environment(\.colorScheme) var colorScheme
     
     @ObservedObject var viewModel: BookshelfViewModel
@@ -18,12 +20,13 @@ struct BookshelfPage: View {
     let scrollViewDelegate = BookshelfPageScrollHandler()
     
     var navigationBar: some View {
-        ZStack(alignment: .bottom) {
-            BlurView(blurEffect: UIBlurEffect(style: .systemThinMaterial)).frame(height: Screen.navigationBarHeight)
+        ZStack(alignment: .center) {
+            BlurView(blurEffect: UIBlurEffect(style: .systemThinMaterial))
             
             VStack(spacing: 0) {
+                Spacer()
                 HStack(spacing: 0) {
-                    Spacer(minLength: Drawing.navigationItemWidth * 2)
+                    Spacer().frame(width: Drawing.navigationItemWidth * 2)
                     Spacer()
                     Text("书架").font(.bold(.body)())
                     Spacer()
@@ -34,11 +37,13 @@ struct BookshelfPage: View {
                         Image("actionbar_search").renderingMode(.template).foregroundColor(ThemeColor.darkGray)
                     }.frame(width: Drawing.navigationItemWidth)
                 }
-                .padding()
+                .padding(EdgeInsets(top: 0, leading: Screen.safeAreaInsets.left + 10, bottom: 0, trailing: Screen.safeAreaInsets.right + 10))
                 .frame(maxWidth: .infinity)
+                Spacer()
                 Divider()
             }
-        }
+            .padding([.top], Screen.safeAreaInsets.top)
+        }.frame(height: Screen.navigationBarHeight)
         .transition(.opacity)
     }
     
@@ -61,7 +66,7 @@ struct BookshelfPage: View {
                     }.frame(width: Drawing.navigationItemWidth)
                 }.padding([.top, .trailing])
                 firstBook
-            }.padding(.top, Screen.safeAreaInsets.top)
+            }.padding(EdgeInsets(top: Screen.safeAreaInsets.top, leading: Screen.safeAreaInsets.left, bottom: 0, trailing: Screen.safeAreaInsets.right))
         }
     }
     
@@ -94,14 +99,15 @@ struct BookshelfPage: View {
         if books.count <= 1 {
              Spacer()
         } else {
-            LazyVGrid(columns: [GridItem(spacing: Drawing.gridSpacing), GridItem(spacing: Drawing.gridSpacing), GridItem(spacing: Drawing.gridSpacing)], spacing: Drawing.gridRunSpacing) {
+            let items = Array(repeating: GridItem(spacing: Drawing.gridSpacing), count: horizontalSizeClass == .compact ? 3 : 6)
+            LazyVGrid(columns: items, spacing: Drawing.gridRunSpacing) {
                  ForEach(books.dropFirst()) { book in
                     BookVItemView(book: book)
                 }
-             }.padding()
+            }.padding(Screen.horizontalSafeAreaInsets(padding: Drawing.gridSpacing))
         }
-    
     }
+    
     
     var content: some View {
         ZStack(alignment: .top) {
