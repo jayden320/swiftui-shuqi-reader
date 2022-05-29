@@ -59,7 +59,7 @@ struct ReaderPage: View {
             } else {
                 main
             }
-        }.navigationBarHidden(true)
+        }
     }
     
     private struct Drawing {

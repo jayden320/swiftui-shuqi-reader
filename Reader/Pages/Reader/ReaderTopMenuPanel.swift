@@ -27,8 +27,17 @@ struct ReaderTopMenuPanel: View {
                 Image("read_icon_more").renderingMode(.template)
             }
         }
-        .padding(Screen.horizontalSafeAreaInsets())
-        .foregroundColor(ThemeColor.darkGray).padding().padding(.top, Screen.safeAreaInsets.top).background(ThemeColor.card)
+        .padding(Screen.horizontalSafeAreaInsets(padding: Drawing.horizontalPadding))
+        .frame(height: height)
+        .foregroundColor(ThemeColor.darkGray).padding(.top, Screen.safeAreaInsets.top).background(ThemeColor.card)
+    }
+    
+    var height: CGFloat {
+        verticalSizeClass == .compact ? 44 : 50
+    }
+    
+    private struct Drawing {
+        static let horizontalPadding = 15.0
     }
 }
 
