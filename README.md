@@ -42,9 +42,9 @@ Reimplemented part of the functionality of this project using swiftUI: [flutter_
 | ![10](https://i.postimg.cc/0N26KkLh/dark-4.png)   | ![11](https://i.postimg.cc/1X641fqV/dark-5.png)   | ![12](https://i.postimg.cc/k4LDHxBd/dark-6.png)   |
 
 ### Horizontal
-| ![13](https://i.postimg.cc/QNnphCp6/horizontal-1.png)   | ![14](https://i.postimg.cc/ZKGpvQsp/horizontal-2.png)   |
+| ![13](https://i.postimg.cc/Xq5vpw2k/horizontal-1.png)   | ![14](https://i.postimg.cc/QMPs1FK4/horizontal-2.png)   |
 |----------------------------------------------------------|----------------------------------------------------------|
-| ![15](https://i.postimg.cc/9Qnc83TN/horizontal-3.png)   | ![16](https://i.postimg.cc/pXhKTvCP/horizontal-4.png)   |
+| ![15](https://i.postimg.cc/wj86bywS/horizontal-3.png)   | ![16](https://i.postimg.cc/Df1F4yv6/horizontal-4.png)   |
 
 
 ## Setup 🍭
